@@ -1,0 +1,10 @@
+{
+  "id": "015",
+  "name": "Arete dorado",
+  "type": "accessory",
+  "style": "formal",
+  "palette": "joya",
+  "gender": "women",
+  "image": "https://picsum.photos/seed/fashion15/300/400",
+  "source": "synthetic"
+}

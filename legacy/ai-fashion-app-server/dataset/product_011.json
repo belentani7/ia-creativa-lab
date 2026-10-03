@@ -1,0 +1,10 @@
+{
+  "id": "011",
+  "name": "Zapatos formales negros",
+  "type": "shoes",
+  "style": "formal",
+  "palette": "negro",
+  "gender": "men",
+  "image": "https://picsum.photos/seed/fashion11/300/400",
+  "source": "synthetic"
+}

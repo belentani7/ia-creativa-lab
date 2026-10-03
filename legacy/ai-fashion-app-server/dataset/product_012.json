@@ -1,0 +1,10 @@
+{
+  "id": "012",
+  "name": "Pantalón cargo",
+  "type": "bottom",
+  "style": "streetwear",
+  "palette": "tierras",
+  "gender": "unisex",
+  "image": "https://picsum.photos/seed/fashion12/300/400",
+  "source": "synthetic"
+}

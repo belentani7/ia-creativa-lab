@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+# ╔══════════════════════════════════════════════════════════════╗
+# ║  NEON/NULL — CLI Entry Point                                ║
+# ║  Installed globally via: npm install -g neon-terminal       ║
+# ║  Or manually: ln -s ~/.neon/neon.sh /usr/local/bin/neon     ║
+# ╚══════════════════════════════════════════════════════════════╝
+
+set -uo pipefail
+
+# Resolve NEON_HOME — check common install locations
+NEON_HOME=""
+_search_paths=(
+    "$HOME/.neon"
+    "/usr/local/share/neon"
+    "/usr/share/neon"
+    "$(dirname "$(dirname "$(readlink -f "$0" 2>/dev/null || realpath "$0" 2>/dev/null || echo "$0")")")"
+)
+
+for p in "${_search_paths[@]}"; do
+    if [[ -f "$p/neon.sh" ]]; then
+        NEON_HOME="$p"
+        break
+    fi
+done
+
+if [[ -z "$NEON_HOME" ]]; then
+    echo "neon: installation not found" >&2
+    echo "  Run install.sh or: npm install -g neon-terminal" >&2
+    exit 1
+fi
+
+# Source the main library
+source "$NEON_HOME/neon.sh"
+
+# Handle direct CLI invocation
+if [[ $# -gt 0 ]]; then
+    neon "$@"
+else
+    # No args — show help
+    neon help
+fi

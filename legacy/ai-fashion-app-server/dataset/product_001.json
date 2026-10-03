@@ -1,0 +1,10 @@
+{
+  "id": "001",
+  "name": "Camisa blanca casual",
+  "type": "top",
+  "style": "casual",
+  "palette": "neutral",
+  "gender": "men",
+  "image": "https://picsum.photos/seed/fashion1/300/400",
+  "source": "synthetic"
+}

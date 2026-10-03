@@ -1,0 +1,10 @@
+{
+  "id": "008",
+  "name": "Gafas de sol",
+  "type": "accessory",
+  "style": "minimalist",
+  "palette": "monocromatico",
+  "gender": "unisex",
+  "image": "https://picsum.photos/seed/fashion8/300/400",
+  "source": "synthetic"
+}

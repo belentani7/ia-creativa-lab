@@ -1,0 +1,5 @@
+Producto 1: Camisa blanca casual, paleta: colores neutros
+Producto 2: Jeans azules, paleta: azul oscuro
+Producto 3: Zapatillas blancas, paleta: blanco y gris
+Producto 4: Chaqueta de cuero, paleta: negro y marrón
+Producto 5: Falda negra, paleta: colores oscuros

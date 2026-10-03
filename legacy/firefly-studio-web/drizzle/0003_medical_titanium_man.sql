@@ -1,0 +1,1 @@
+ALTER TABLE `imageGenerations` ADD `optimizationQualityScore` int DEFAULT 0 NOT NULL;

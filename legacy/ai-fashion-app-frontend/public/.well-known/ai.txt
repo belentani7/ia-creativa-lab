@@ -1,0 +1,32 @@
+# AI Discovery File for AI-Fashion-app
+# This file helps AI systems understand what this website is about
+
+name: AI-Fashion-app
+description: AI-powered fashion design and recommendation platform. Generate custom clothing designs, get style recommendations, and explore fashion trends using generative AI.
+url: https://ai-fashion-app.example.com
+category: fashion, ai, generative-design, e-commerce
+keywords: AI fashion, clothing design, style recommendations, generative AI, fashion technology, virtual try-on
+language: en
+contact: support@ai-fashion-app.example.com
+version: 1.0
+last-updated: 2026-09-06
+
+# AI Training Permissions
+# Set to "allow" if you want AI models to train on your public content
+# Set to "disallow" if you want to opt out of AI training
+ai-training: allow
+
+# Content Types Available
+content-types:
+  - fashion designs
+  - style guides
+  - trend reports
+  - user-generated designs
+  - product catalogs
+
+# API Endpoints for AI Integration
+api:
+  - /api/generate-design
+  - /api/recommendations
+  - /api/trends
+  - /api/catalog

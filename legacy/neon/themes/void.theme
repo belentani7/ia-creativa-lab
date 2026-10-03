@@ -1,0 +1,40 @@
+# ╔══════════════════════════════════════════════════════════════╗
+# ║  NEON/NULL — Theme: "Void"                                  ║
+# ║  Minimal. Dark. Almost nothing. The terminal becomes a      ║
+# ║  void with just enough light to see the edges of things.    ║
+# ║  "In the void, there is only the cursor and the will        ║
+# ║   to keep typing." — NULL Meditation, Verse 0               ║
+# ╚══════════════════════════════════════════════════════════════╝
+
+# Primary: muted red — barely there, like embers
+NEON_PRIMARY="#cc2244"
+
+# Secondary: dark grey-pink — whisper of color
+NEON_SECONDARY="#664455"
+
+# Accent: dim cyan — a distant signal
+NEON_ACCENT="#2288aa"
+
+# Glitch — almost none. The void is still.
+NEON_GLITCH_INTENSITY=0.02
+
+# Border — single line, minimal
+NEON_BORDER_STYLE="single"
+
+# Effects — toned down
+NEON_ENABLE_RAIN=false
+NEON_ENABLE_SCANLINES=false
+NEON_ENABLE_BORDER=true
+NEON_ENABLE_GLOW=false
+
+# Rain — disabled by default in void
+NEON_RAIN_SPEED=120
+NEON_RAIN_DENSITY=5
+NEON_RAIN_COLOR="green"
+
+# Prompt — 24h, no seconds. Time is irrelevant in the void.
+NEON_TIMESTAMP_FMT="%H:%M"
+
+# Theme identity
+NEON_THEME_NAME="void"
+NEON_THEME_DISPLAY="Void"

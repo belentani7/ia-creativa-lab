@@ -1,0 +1,15 @@
+{
+  "appName": "Pair - AI Fashion Advisor",
+  "uploadImage": "Upload a clothing item photo",
+  "hintPlaceholder": "Optional hint (eg: 'black top with embroidery')",
+  "analyzeButton": "Analyze garment",
+  "category": "Category",
+  "style": "Style",
+  "palette": "Color palette",
+  "confirm": "Confirm analysis",
+  "reanalyze": "Re-analyze",
+  "results": "Your matches",
+  "lookbook": "AI-generated lookbook",
+  "back": "Back to mixing",
+  "uploadSuccess": "Garment uploaded successfully"
+}

@@ -1,0 +1,32 @@
+# Dependencias y artefactos de build
+node_modules/
+dist/
+build/
+.next/
+out/
+.cache/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Entornos locales y secretos (nunca deben entrar en git)
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+id_rsa*
+.p12
+.pfx
+.kdbx
+.git-credentials
+npm-debug.log*
+yarn-error.log*
+
+# Sistema operativo y editores
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/

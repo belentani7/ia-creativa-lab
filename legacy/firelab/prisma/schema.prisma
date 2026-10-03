@@ -1,0 +1,43 @@
+// BELENTANI FIRELAB — local-first data layer
+// Projects, generation history and asset index. SQLite via Prisma.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Project {
+  id        String   @id @default(cuid())
+  name      String   @default("Untitled")
+  canvas    String   @default("{}") // serialized editor snapshot (asset refs, params, prompts)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Generation {
+  id         String   @id @default(cuid())
+  projectId  String?
+  kind       String // text-to-image | fill | remove | expand | background | variations | refine | enhance
+  prompt     String?
+  provider   String
+  params     String   @default("{}")
+  status     String   @default("completed") // completed | failed | cancelled
+  error      String?
+  durationMs Int?
+  createdAt  DateTime @default(now())
+}
+
+model Asset {
+  id        String   @id @default(cuid())
+  file      String // relative filename inside db/firelab-assets
+  thumb     String? // webp thumbnail filename
+  mime      String   @default("image/png")
+  bytes     Int      @default(0)
+  width     Int?
+  height    Int?
+  createdAt DateTime @default(now())
+}

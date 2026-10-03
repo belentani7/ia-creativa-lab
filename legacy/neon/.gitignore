@@ -1,0 +1,42 @@
+# NEON/NULL — Git Ignore
+# "Some data should never be committed." — NULL Archival Policy
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+
+# Editor / IDE
+.vscode/
+.idea/
+*.iml
+*.sublime-*
+
+# Shell
+*.bak
+*.orig
+*.log
+
+# Node.js (optional companion)
+node_modules/
+package-lock.json
+npm-debug.log*
+
+# NEON runtime files (generated on install)
+debug.log
+sessions/
+tmp/
+
+# Secrets / credentials (NEVER commit these)
+.env
+.env.*
+*.key
+*.pem
+credentials
+
+# Backup files from config editing
+config.bak
+*.backup

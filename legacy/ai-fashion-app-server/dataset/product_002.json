@@ -1,0 +1,10 @@
+{
+  "id": "002",
+  "name": "Jeans azules",
+  "type": "bottom",
+  "style": "streetwear",
+  "palette": "blue oscuro",
+  "gender": "unisex",
+  "image": "https://picsum.photos/seed/fashion2/300/400",
+  "source": "synthetic"
+}

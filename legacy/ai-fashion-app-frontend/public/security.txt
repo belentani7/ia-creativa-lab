@@ -1,0 +1,12 @@
+# security.txt for AI-Fashion-app
+# Security contact information per RFC 9116
+
+Contact: mailto:security@ai-fashion-app.example.com
+Contact: https://ai-fashion-app.example.com/security/report
+Preferred-Languages: en
+Canonical: https://ai-fashion-app.example.com/.well-known/security.txt
+Policy: https://ai-fashion-app.example.com/security/policy
+Hiring: https://ai-fashion-app.example.com/careers/security
+Encryption: https://ai-fashion-app.example.com/.well-known/pgp-key.txt
+Acknowledgments: https://ai-fashion-app.example.com/security/hall-of-fame
+Expires: 2027-09-06T00:00:00.000Z

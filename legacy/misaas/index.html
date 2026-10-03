@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MiSaaS — Mission control para tu fuerza de trabajo de agentes autónomos. Orquesta, observa y escala agentes desde un solo panel.">
+  <meta name="theme-color" content="#030508">
+  <title>MiSaaS — Mission Control para Agentes Autónomos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23030508'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%2300f3ff' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='2.5' fill='%23d4af37'/%3E%3C/svg%3E">
+</head>
+<body>
+  <div class="aurora"></div>
+  <div class="tech-grid"></div>
+  <div class="grain"></div>
+  <div class="scanlines"></div>
+
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html">
+        <span class="logo-mark"></span>
+        MiSaaS<span style="color:var(--accent)">/</span>MC
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#producto">Producto</a>
+        <a href="#observabilidad">Observabilidad</a>
+        <a href="#precios">Precios</a>
+        <a href="app.html">Dashboard</a>
+      </div>
+      <div class="nav-actions">
+        <a class="btn btn-primary btn-sm" href="app.html">Desplegar agentes</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <canvas id="core-canvas" aria-hidden="true"></canvas>
+    <div class="container hero-content">
+      <div class="kicker" data-scramble="AGENT WORKFORCE PLATFORM · V4.0">AGENT WORKFORCE PLATFORM · V4.0</div>
+      <h1 class="display headline-xl hero-title">
+        <span class="gradient-text">Tu empresa</span><br>
+        <span class="stroke-text">operada por agentes</span>
+      </h1>
+      <p class="hero-sub">Orquesta agentes autónomos que venden, investigan y ejecutan. Un núcleo, control total, cero ruido operativo.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="app.html">Lanzar misión</a>
+        <a class="btn btn-ghost" href="#producto">Ver capacidades ↓</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat glass reveal">
+          <div class="stat-num data" data-count="1420" data-dec="0">0</div>
+          <div class="stat-label">Agentes activos</div>
+        </div>
+        <div class="stat glass reveal reveal-delay-1">
+          <div class="stat-num data"><span data-count="38.4" data-dec="1">0</span><span class="unit">K</span></div>
+          <div class="stat-label">Tareas / día</div>
+        </div>
+        <div class="stat glass reveal reveal-delay-2">
+          <div class="stat-num data" data-count="99.99" data-dec="2">0</div>
+          <div class="stat-label">Uptime %</div>
+        </div>
+        <div class="stat glass reveal reveal-delay-3">
+          <div class="stat-num data" data-count="42" data-dec="0">0</div>
+          <div class="stat-label">Latencia p95 ms</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="trust">
+    <div class="container trust-inner">
+      <span class="label">Operando en el ecosistema</span>
+      <div class="trust-names">
+        <span class="trust-name">Belentani</span>
+        <span class="trust-name">Aurum</span>
+        <span class="trust-name">Noiacore</span>
+        <span class="trust-name">PVC-U</span>
+        <span class="trust-name">Linguaforge</span>
+        <span class="trust-name">Secure-T</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="section" id="producto">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">Producto</div>
+        <h2 class="display headline-lg" style="margin-top:var(--space-4)">Un núcleo.<br><span class="stroke-text">Todo el trabajo.</span></h2>
+        <p class="lead" style="margin-top:var(--space-4)">Cada agente recibe contexto, permisos y presupuesto. Tú ves el campo de batalla completo en tiempo real.</p>
+      </div>
+      <div class="bento">
+        <article class="bento-card bento-hero glass-elevated reveal">
+          <div class="card-ico">◉</div>
+          <h3>Orquestación viva</h3>
+          <p>Grafo de agentes con dependencias, reintentos y presupuestos por tarea. Si un nodo falla, el sistema reasigna sin intervención.</p>
+          <div class="big-num data">38.4K<small>Tareas completadas hoy · 99.2% éxito</small></div>
+        </article>
+        <article class="bento-card glass reveal reveal-delay-1">
+          <div class="card-ico">⬢</div>
+          <h3>Sandbox por agente</h3>
+          <p>Permisos mínimos, red aislada, límites de cómputo. Nada sale del perímetro sin firma.</p>
+        </article>
+        <article class="bento-card glass reveal reveal-delay-2">
+          <div class="card-ico">◈</div>
+          <h3>Memoria persistente</h3>
+          <p>Contexto vectorial entre sesiones. Tus agentes recuerdan decisiones, no repiten errores.</p>
+        </article>
+        <article class="bento-card bento-wide glass reveal reveal-delay-1">
+          <div class="card-ico">⟁</div>
+          <h3>Observabilidad total</h3>
+          <p>Trazas, coste y latencia por tarea, por agente, por minuto. Sabes qué hizo cada agente y por qué, siempre.</p>
+        </article>
+        <article class="bento-card glass reveal reveal-delay-2">
+          <div class="card-ico">⌁</div>
+          <h3>Integraciones</h3>
+          <p>APIs, webhooks, MCP y colas. Conecta tu stack en minutos.</p>
+        </article>
+        <article class="bento-card glass reveal reveal-delay-3">
+          <div class="card-ico">▲</div>
+          <h3>Escalado elástico</h3>
+          <p>De 1 a 10.000 agentes. El núcleo reparte carga y respeta cuotas.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="observabilidad">
+    <div class="container split">
+      <div class="reveal">
+        <div class="kicker">Observabilidad</div>
+        <h2 class="display headline-lg" style="margin-top:var(--space-4)">Cada decisión,<br>trazada.</h2>
+        <p class="lead" style="margin-top:var(--space-4)">El feed en vivo muestra cada paso del enjambre: órdenes, herramientas, verificaciones y coste. Auditable de punta a punta.</p>
+        <ul class="checklist">
+          <li>Trazas por tarea con diff de estado antes/después</li>
+          <li>Alertas por umbral de coste, latencia o error</li>
+          <li>Replay de cualquier ejecución, paso a paso</li>
+          <li>Exportación a tu stack de observabilidad</li>
+        </ul>
+        <div class="hero-cta" style="margin-top:var(--space-8)">
+          <a class="btn btn-ghost" href="app.html">Abrir dashboard →</a>
+        </div>
+      </div>
+      <div class="terminal glass-elevated reveal reveal-delay-1">
+        <div class="terminal-head">
+          <div class="terminal-dots"><span></span><span></span><span></span></div>
+          <span>swarm://live</span>
+        </div>
+        <div class="terminal-body" id="terminalBody"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="precios">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">Precios</div>
+        <h2 class="display headline-lg" style="margin-top:var(--space-4)">Simple. <span class="stroke-text">Sin sorpresas.</span></h2>
+      </div>
+      <div class="pricing">
+        <article class="price-card glass reveal">
+          <div class="price-name">Starter</div>
+          <div class="price-tag data">0€<small>/mes</small></div>
+          <p class="price-desc">Para explorar el núcleo y desplegar tus primeros agentes.</p>
+          <ul class="price-features">
+            <li>3 agentes concurrentes</li>
+            <li>1.000 tareas / mes</li>
+            <li>Logs 7 días</li>
+            <li>Comunidad</li>
+          </ul>
+          <a class="btn btn-ghost" href="app.html">Empezar gratis</a>
+        </article>
+        <article class="price-card glass-elevated featured reveal reveal-delay-1">
+          <div class="price-name">Scale</div>
+          <div class="price-tag data">89€<small>/mes</small></div>
+          <p class="price-desc">Para equipos que ya operan con agentes en producción.</p>
+          <ul class="price-features">
+            <li>50 agentes concurrentes</li>
+            <li>100.000 tareas / mes</li>
+            <li>Trazas + replay 90 días</li>
+            <li>SSO, RBAC, auditoría</li>
+            <li>Soporte prioritario</li>
+          </ul>
+          <a class="btn btn-primary" href="app.html">Probar 14 días</a>
+        </article>
+        <article class="price-card glass reveal reveal-delay-2">
+          <div class="price-name">Enterprise</div>
+          <div class="price-tag data">A medida</div>
+          <p class="price-desc">Para operaciones críticas con requisitos propios.</p>
+          <ul class="price-features">
+            <li>Agentes ilimitados</li>
+            <li>On-premise o VPC dedicada</li>
+            <li>SLA 99,99%</li>
+            <li>Ingeniero asignado</li>
+          </ul>
+          <a class="btn btn-ghost" href="mailto:hola@belentani.dev">Hablar con ventas</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final">
+    <div class="container reveal">
+      <div class="kicker" style="justify-content:center">Listo cuando tú</div>
+      <h2 class="display headline-lg" style="margin-top:var(--space-4)"><span class="gradient-text">Despliega</span> tu enjambre</h2>
+      <p class="lead" style="margin:var(--space-4) auto var(--space-8)">El núcleo ya está en marcha. Solo falta tu primera orden.</p>
+      <a class="btn btn-primary" href="app.html">Entrar al mission control</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="logo"><span class="logo-mark"></span>MiSaaS<span style="color:var(--accent)">/</span>MC</div>
+          <p style="color:var(--text-muted);font-size:0.85rem;margin-top:var(--space-3);max-width:36ch">Mission control para fuerzas de trabajo autónomas. Parte del ecosistema Belentani.</p>
+        </div>
+        <div class="footer-links">
+          <a href="app.html">Dashboard</a>
+          <a href="#producto">Producto</a>
+          <a href="#precios">Precios</a>
+          <a href="https://github.com/belentani7" target="_blank" rel="noopener">GitHub</a>
+          <a href="LICENSE">Licencia MIT</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Pedro Belentani · MIT</span>
+        <span>Uptime 99.99% · p95 42ms</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/three@0.152.2/build/three.min.js"></script>
+  <script src="assets/js/webgl-core.js"></script>
+  <script src="assets/js/landing.js"></script>
+</body>
+</html>

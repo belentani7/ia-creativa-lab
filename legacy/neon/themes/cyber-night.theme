@@ -1,0 +1,40 @@
+# ╔══════════════════════════════════════════════════════════════╗
+# ║  NEON/NULL — Theme: "Cyber Night"                           ║
+# ║  Blue and ice. For the 4am coding sessions when the         ║
+# ║  city sleeps but the network never does.                    ║
+# ║  "The night belongs to those who keep the terminals lit."   ║
+# ║                            — NULL Signal Log, Entry 0x7F     ║
+# ╚══════════════════════════════════════════════════════════════╝
+
+# Primary: electric blue — clean, surgical data flow
+NEON_PRIMARY="#0066ff"
+
+# Secondary: ice violet — the color of encrypted packets
+NEON_SECONDARY="#7b2dff"
+
+# Accent: cold white — pure signal, zero noise
+NEON_ACCENT="#00f0ff"
+
+# Glitch — lower intensity. The night is calm.
+NEON_GLITCH_INTENSITY=0.03
+
+# Border — rounded for a softer feel in the dark
+NEON_BORDER_STYLE="rounded"
+
+# Effects
+NEON_ENABLE_RAIN=true
+NEON_ENABLE_SCANLINES=true
+NEON_ENABLE_BORDER=true
+NEON_ENABLE_GLOW=true
+
+# Rain — cyan, slower, denser. Like data falling through fiber.
+NEON_RAIN_SPEED=80
+NEON_RAIN_DENSITY=20
+NEON_RAIN_COLOR="cyan"
+
+# Prompt
+NEON_TIMESTAMP_FMT="%H:%M:%S"
+
+# Theme identity
+NEON_THEME_NAME="cyber-night"
+NEON_THEME_DISPLAY="Cyber Night"

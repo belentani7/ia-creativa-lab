@@ -1,0 +1,41 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1787072855657,
+      "tag": "0000_white_leader",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1787073258389,
+      "tag": "0001_medical_sumo",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1787268177312,
+      "tag": "0002_faithful_sway",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1787268465043,
+      "tag": "0003_medical_titanium_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1787430137464,
+      "tag": "0004_gorgeous_energizer",
+      "breakpoints": true
+    }
+  ]
+}

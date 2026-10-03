@@ -1,0 +1,20 @@
+{
+  "name": "ai-fashion-server",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "w3m dev",
+    "build": "w3m build",
+    "import-data": "w3m import-data",
+    "start": "w3m start"
+  },
+  "dependencies": {
+    "hono": "^4.0.0",
+    "mongoose": "^8.0.0",
+    "dotenv": "^16.4.5",
+    "@google/genai": "^0.2.0"
+  },
+  "devDependencies": {
+    "w3m": "^1.0.0"
+  }
+}

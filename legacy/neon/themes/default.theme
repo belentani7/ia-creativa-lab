@@ -1,0 +1,41 @@
+# ╔══════════════════════════════════════════════════════════════╗
+# ║  NEON/NULL — Default Theme: "Blood Circuit"                 ║
+# ║  The original. Red and pink neon bleeding through silicon.  ║
+# ║  Inspired by the NEON/NULL collective's first terminal      ║
+# ║  breach — Sector 7, 2019. "They couldn't stop the signal."  ║
+# ╚══════════════════════════════════════════════════════════════╝
+
+# Primary: blood neon red — the color of raw data under pressure
+NEON_PRIMARY="#ff003c"
+
+# Secondary: hot wire pink — like overheated copper traces
+NEON_SECONDARY="#ff2d6b"
+
+# Accent: ice cyan — cold logic, clean data streams
+NEON_ACCENT="#00f0ff"
+
+# Glitch intensity — 0.05 is subtle static, like a bad signal
+# "Every glitch is a message from the other side" — NULL Manifesto Art.3
+NEON_GLITCH_INTENSITY=0.05
+
+# Border style — double line, classic terminal framing
+NEON_BORDER_STYLE="double"
+
+# Effects toggles
+NEON_ENABLE_RAIN=true
+NEON_ENABLE_SCANLINES=true
+NEON_ENABLE_BORDER=true
+NEON_ENABLE_GLOW=true
+
+# Rain config — red rain, medium speed
+# The rain encodes "FREEDOM OF INFORMATION" in its character stream
+NEON_RAIN_SPEED=50
+NEON_RAIN_DENSITY=15
+NEON_RAIN_COLOR="red"
+
+# Prompt
+NEON_TIMESTAMP_FMT="%H:%M:%S"
+
+# Theme identity
+NEON_THEME_NAME="default"
+NEON_THEME_DISPLAY="Blood Circuit"

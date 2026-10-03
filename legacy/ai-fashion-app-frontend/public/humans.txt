@@ -1,0 +1,26 @@
+# humans.txt for AI-Fashion-app
+# The humans behind the project
+
+TEAM:
+  Lead Developer: Guilherme Rodrigues
+  AI/ML Engineer: Guilherme Rodrigues
+  Frontend Developer: Guilherme Rodrigues
+  Designer: Guilherme Rodrigues
+
+THANKS:
+  - Open source community
+  - AI research community
+  - Fashion industry innovators
+
+SITE:
+  Last update: 2026-09-06
+  Language: English
+  Doctype: HTML5
+  Framework: React + Vite + TypeScript
+  Styling: Tailwind CSS
+  AI: Generative AI for fashion design
+
+CONTACT:
+  Email: support@ai-fashion-app.example.com
+  GitHub: https://github.com/belentani/ai-fashion-app
+  Twitter: @ai_fashion_app

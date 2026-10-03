@@ -1,0 +1,10 @@
+{
+  "id": "017",
+  "name": "Bermuda casual",
+  "type": "bottom",
+  "style": "casual",
+  "palette": "blanco y negro",
+  "gender": "men",
+  "image": "https://picsum.photos/seed/fashion17/300/400",
+  "source": "synthetic"
+}

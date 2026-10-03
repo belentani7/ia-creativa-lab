@@ -1,0 +1,10 @@
+{
+  "id": "018",
+  "name": "Sombrero de paja",
+  "type": "accessory",
+  "style": "boho",
+  "palette": "tierras",
+  "gender": "unisex",
+  "image": "https://picsum.photos/seed/fashion18/300/400",
+  "source": "synthetic"
+}

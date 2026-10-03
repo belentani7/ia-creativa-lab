@@ -1,0 +1,10 @@
+{
+  "id": "014",
+  "name": "Bufanda de lana",
+  "type": "accessory",
+  "style": "casual",
+  "palette": "earth tones",
+  "gender": "unisex",
+  "image": "https://picsum.photos/seed/fashion14/300/400",
+  "source": "synthetic"
+}

@@ -1,0 +1,15 @@
+{
+  "appName": "Pair - Asesor de Moda AI",
+  "uploadImage": "Sube una foto de prenda de vestir",
+  "hintPlaceholder": "Pista opcional (ej: 'top negro con bordado')",
+  "analyzeButton": "Analizar prenda",
+  "category": "Categoría",
+  "style": "Estilo",
+  "palette": "Paleta de colores",
+  "confirm": "Confirmar análisis",
+  "reanalyze": "Re-analizar",
+  "results": "Tus combinaciones",
+  "lookbook": "Lookbook generado por IA",
+  "back": "Volver a combinar",
+  "uploadSuccess": "Prenda subida exitosamente"
+}

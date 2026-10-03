@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pbr-validator"
+version = "0.1.0"
+description = "Validates PBR texture sets for correctness and game engine compatibility"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.22",
+    "Pillow>=9.0",
+    "click>=8.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
+
+[project.scripts]
+pbrv = "validator.cli:cli"
+
+[tool.hatch.build.targets.wheel]
+packages = ["validator"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

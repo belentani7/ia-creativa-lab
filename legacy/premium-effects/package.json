@@ -1,0 +1,44 @@
+{
+  "name": "premium-effects-registry",
+  "version": "1.0.0",
+  "description": "Colección curada de 50+ repos GitHub para efectos visuales premium en frontend — liquid logos, 3D/WebGL, shaders GLSL, GSAP, partículas, cyberpunk UI, creative coding",
+  "type": "skill",
+  "author": "belentani7",
+  "license": "MIT",
+  "keywords": [
+    "frontend",
+    "effects",
+    "liquid logo",
+    "webgl",
+    "three.js",
+    "gsap",
+    "shaders",
+    "glsl",
+    "particles",
+    "cyberpunk",
+    "creative-coding",
+    "animation",
+    "3d",
+    "scroll",
+    "cursor effects"
+  ],
+  "skills": {
+    "id": "premium-effects-registry",
+    "name": "Premium Effects Registry",
+    "description": "Catalogo curado de los mejores repos GitHub para efectos visuales premium en frontend — 50+ repos organizados por categoria (liquid logos, 3D/WebGL, GLSL, GSAP, particles, cyberpunk, creative coding, scroll, cursor)",
+    "triggers": [
+      "efectos premium",
+      "liquid logo",
+      "3d webgl",
+      "shader glsl",
+      "particle effect",
+      "gsap animation",
+      "cyberpunk ui",
+      "creative coding",
+      "scroll animation",
+      "cursor effect",
+      "awwwards",
+      "futuristic design"
+    ]
+  }
+}

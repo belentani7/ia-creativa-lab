@@ -1,0 +1,10 @@
+{
+  "id": "009",
+  "name": "Gorro de punto",
+  "type": "accessory",
+  "style": "casual",
+  "palette": "tierras",
+  "gender": "men",
+  "image": "https://picsum.photos/seed/fashion9/300/400",
+  "source": "synthetic"
+}

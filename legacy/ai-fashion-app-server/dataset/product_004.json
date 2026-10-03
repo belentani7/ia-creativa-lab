@@ -1,0 +1,10 @@
+{
+  "id": "004",
+  "name": "Falda negra",
+  "type": "bottom",
+  "style": "boho",
+  "palette": "colores oscuros",
+  "gender": "women",
+  "image": "https://picsum.photos/seed/fashion4/300/400",
+  "source": "synthetic"
+}

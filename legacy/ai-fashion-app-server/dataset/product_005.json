@@ -1,0 +1,10 @@
+{
+  "id": "005",
+  "name": "Zapatillas blancas",
+  "type": "shoes",
+  "style": "streetwear",
+  "palette": "blanco y gris",
+  "gender": "unisex",
+  "image": "https://picsum.photos/seed/fashion5/300/400",
+  "source": "synthetic"
+}

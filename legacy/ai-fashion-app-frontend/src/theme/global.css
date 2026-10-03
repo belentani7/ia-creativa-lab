@@ -1,0 +1,60 @@
+:root {
+  --azul-950: #020610;
+  --azul-900: #050d1f;
+  --azul-800: #0a1a38;
+  --azul-real: #14418f;
+  --cian: #33d6ff;
+  --cian-hi: #e0faff;
+  --oro: #e8b64c;
+  --oro-hi: #ffedbb;
+  --oro-med: #c9962e;
+  --txt: #f0f7ff;
+  --txt-suave: #a5c3e8;
+}
+
+.af-abyss {
+  background: radial-gradient(1200px 800px at 20% 0%, #0a1a38 0%, #020610 55%, #020610 100%);
+  color: var(--txt);
+  min-height: 100vh;
+}
+
+.vidrio {
+  background: rgba(240, 247, 255, 0.06);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(51, 214, 255, 0.22);
+  box-shadow: 0 8px 32px rgba(2, 6, 16, 0.45);
+  border-radius: 1rem;
+}
+
+.btn {
+  border-radius: 0.75rem;
+  font-weight: 600;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.btn-oro {
+  background: linear-gradient(135deg, var(--oro-hi), var(--oro) 45%, var(--oro-med));
+  color: #1a1200;
+  box-shadow: 0 0 24px rgba(232, 182, 76, 0.35);
+}
+
+.btn-oro:hover { filter: brightness(1.06); }
+
+.btn-cian {
+  background: linear-gradient(135deg, var(--cian-hi), var(--cian));
+  color: #02141b;
+  box-shadow: 0 0 24px rgba(51, 214, 255, 0.35);
+}
+
+.btn-cian:hover { filter: brightness(1.06); }
+
+.btn-vidrio {
+  background: rgba(51, 214, 255, 0.1);
+  color: var(--txt);
+  border: 1px solid rgba(51, 214, 255, 0.3);
+}
+
+.text-cian { color: var(--cian); text-shadow: 0 0 18px rgba(51, 214, 255, 0.45); }
+.text-oro { color: var(--oro); text-shadow: 0 0 18px rgba(232, 182, 76, 0.45); }
+.glow-oro { box-shadow: 0 0 28px rgba(232, 182, 76, 0.35); }

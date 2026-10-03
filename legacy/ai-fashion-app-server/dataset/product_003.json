@@ -1,0 +1,10 @@
+{
+  "id": "003",
+  "name": "Zapatillas deportivas",
+  "type": "shoes",
+  "style": "casual",
+  "palette": "blanco y negro",
+  "gender": "men",
+  "image": "https://picsum.photos/seed/fashion3/300/400",
+  "source": "synthetic"
+}

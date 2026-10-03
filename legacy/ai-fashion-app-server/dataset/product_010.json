@@ -1,0 +1,10 @@
+{
+  "id": "010",
+  "name": "Reloj de acero",
+  "type": "accessory",
+  "style": "formal",
+  "palette": "negro",
+  "gender": "men",
+  "image": "https://picsum.photos/seed/fashion10/300/400",
+  "source": "synthetic"
+}

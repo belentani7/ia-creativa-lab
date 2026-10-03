@@ -1,0 +1,10 @@
+{
+  "id": "016",
+  "name": "Bolso cruzado",
+  "type": "accessory",
+  "style": "boho",
+  "palette": "pastel",
+  "gender": "women",
+  "image": "https://picsum.photos/seed/fashion16/300/400",
+  "source": "synthetic"
+}

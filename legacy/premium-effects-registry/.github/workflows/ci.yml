@@ -1,0 +1,14 @@
+name: ci
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verificacion basica
+        run: |
+          test -f README.md && echo "README ok"
+          test -f LICENSE && echo "LICENSE ok"
