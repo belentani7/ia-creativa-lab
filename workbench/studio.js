@@ -21,6 +21,10 @@ const fromManifest = raw => {
         !/^[a-z0-9-]+$/.test(item.id) ||
         item.original_repository !== item.id ||
         item.snapshot_path !== "legacy/" + item.id + "/" ||
+        typeof item.entrypoint_path !== "string" ||
+        !item.entrypoint_path.startsWith(item.snapshot_path) ||
+        !/^legacy\/[a-z0-9-]+\/[a-zA-Z0-9_./-]+$/.test(item.entrypoint_path) ||
+        item.entrypoint_path.includes("..") ||
         !["private", "public"].includes(item.historical_visibility) ||
         seen.has(item.id)) {
       throw new Error("Invalid independent project identity");
@@ -50,7 +54,7 @@ function card(item, order) {
   const foot = element("div", undefined, "card-foot");
   foot.append(element("span", item.historical_size_kb + " KB · TAMAÑO HISTÓRICO"));
   const open = element("a", "Consultar origen ↗");
-  open.href = "./" + item.snapshot_path + "README.md";
+  open.href = "./" + item.entrypoint_path;
   open.setAttribute("aria-label", "Abrir README histórico de " + item.id);
   foot.append(open);
   box.append(foot);
@@ -101,7 +105,7 @@ async function main() {
       item => item.historical_visibility === "public").length);
     render();
   } catch {
-    byId("resultCount").textContent = "Inventario indisponible desde esta dirección";
+    byId("resultCount").textContent = "Inventario no disponible desde esta dirección";
     byId("error").hidden = false;
   }
 }
