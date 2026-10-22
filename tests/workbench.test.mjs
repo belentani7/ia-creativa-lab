@@ -59,7 +59,7 @@ test("local manifest import and source downloads work without serving legacy HTM
   assert.match(js, /file\.size > 256_000/);
   assert.match(js, /await file\.text\(\)/);
   assert.match(js, /applyManifest\(parsed\)/);
-  assert.match(js, /open\.download = item\.entrypoint_path/);
+  assert.match(js, /open\.download = item\.entrypoint_path\.split/);
   assert.match(js, /se conserva el catálogo anterior/);
   assert.doesNotMatch(js, /window\.open\(/);
 });
