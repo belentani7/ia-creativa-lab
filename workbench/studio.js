@@ -17,8 +17,12 @@ const fromManifest = raw => {
   }
   const seen = new Set();
   return raw.snapshots.map(item => {
-    if (!item || typeof item.id !== "string" ||
+    if (!item || typeof item.id !== "string" || item.id.length > 100 ||
         !/^[a-z0-9-]+$/.test(item.id) ||
+        typeof item.historical_description !== "string" || item.historical_description.length > 2000 ||
+        typeof item.historical_site !== "string" || item.historical_site.length > 300 ||
+        !Number.isSafeInteger(item.historical_size_kb) ||
+        item.historical_size_kb < 0 || item.historical_size_kb > 1_000_000 ||
         item.original_repository !== item.id ||
         item.snapshot_path !== "legacy/" + item.id + "/" ||
         typeof item.entrypoint_path !== "string" ||
