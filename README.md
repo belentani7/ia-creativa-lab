@@ -34,3 +34,29 @@ Cada carpeta de `legacy/` conserva el contenido del repo original sin reescribir
 | `legacy/ai-fashion-app-server` | [`ai-fashion-app-server`](https://github.com/belentani7/ai-fashion-app-server) | 15 | priv | — | Proyecto server del ecosistema Belentani. |
 | `legacy/premium-effects-registry` | [`premium-effects-registry`](https://github.com/belentani7/premium-effects-registry) | 11 | pub | — | Curated collection of 50+ GitHub repos for premium frontend visual effects — liquid logos, |
 | `legacy/premium-effects` | [`premium-effects`](https://github.com/belentani7/premium-effects) | 9 | priv | — | Colección curada de 50+ repos GitHub para efectos visuales premium en frontend |
+
+
+## Archivo de consulta privado — Workbench (octubre de 2026)
+
+Se ha añadido una **interfaz editorial de consulta y búsqueda**, no una fusión de nuevas aplicaciones. `index.html`, `workbench/studio.css` y `workbench/studio.js` implementan una biblioteca corporativa de los **24 snapshots originales**, con búsqueda por identidad/propósito, filtros de visibilidad **histórica** y acceso a un archivo real de cada carpeta. El catálogo estructurado es `catalog.json`.
+
+**Regla central:** cada carpeta `legacy/<nombre>/` permanece intacta y con su identidad propia. El Workbench **no crea repositorios**, no genera nombres de proyectos a partir de conversaciones y no combina productos diferentes. Se revisaron las 24 rutas; en `lumena` el punto de entrada válido es `client/index.html` porque el snapshot no incluye README. Las tarjetas enlazan a documentos de su propio directorio.
+
+### Abrir de forma privada
+
+En una máquina autorizada, desde la raíz del repositorio:
+
+    python3 -m http.server 8000 --bind 127.0.0.1
+
+Abre `http://127.0.0.1:8000`. El navegador consulta `catalog.json` desde el mismo origen; no carga bibliotecas externas ni envía credenciales. El servidor es local **solo si se mantiene unido a 127.0.0.1**. No abrirlo en una dirección pública, no desplegarlo en GitHub Pages/Vercel y no compartir capturas que revelen información privada de otros productos.
+
+### Contrato de calidad
+
+    node --check workbench/studio.js
+    node --test tests/workbench.test.mjs
+
+El test revisa que los directorios reales coincidan exactamente con las 24 identidades de origen, que cada enlace local apunte a un archivo existente, que el portal se mantenga `noindex`, y que los filtros no inyecten HTML. La CI **solo valida** el archivo: no tiene job de despliegue.
+
+La tabla original anterior registra tamaños y visibilidad del inventario histórico fechado en 2026-10-02. **No es una lectura de permisos actuales** y `noindex` no sustituye controles de acceso. El código privado o de terceros no obtiene automáticamente licencias de redistribución por estar archivado aquí.
+
+**Estado:** implementación guardada en una rama y PR de revisión. Es un producto **interno**, no una web pública; antes de cualquier redistribución se deben separar los materiales autorizados y verificar derechos y visibilidad actual. Todos los proyectos individuales siguen siendo independientes.
