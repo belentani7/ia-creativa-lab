@@ -53,3 +53,13 @@ test("real search and filtering preserve identity and never inject HTML", () => 
   assert.doesNotMatch(js, /\.eval\(|new Function\(/);
   assert.match(html, /href="#catalog"/);
 });
+
+test("local manifest import and source downloads work without serving legacy HTML", () => {
+  assert.match(html, /id="catalogFile" type="file"/);
+  assert.match(js, /file\.size > 256_000/);
+  assert.match(js, /await file\.text\(\)/);
+  assert.match(js, /applyManifest\(parsed\)/);
+  assert.match(js, /open\.download = item\.entrypoint_path/);
+  assert.match(js, /se conserva el catálogo anterior/);
+  assert.doesNotMatch(js, /window\.open\(/);
+});

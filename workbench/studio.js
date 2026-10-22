@@ -55,7 +55,9 @@ function card(item, order) {
   foot.append(element("span", item.historical_size_kb + " KB · TAMAÑO HISTÓRICO"));
   const open = element("a", "Consultar origen ↗");
   open.href = "./" + item.entrypoint_path;
-  open.setAttribute("aria-label", "Abrir README histórico de " + item.id);
+  // Legacy HTML may contain active, untrusted scripts: download the source instead of executing it in this origin.
+  open.download = item.entrypoint_path.split("/").at(-1);
+  open.setAttribute("aria-label", "Descargar archivo fuente original de " + item.id);
   foot.append(open);
   box.append(foot);
   return box;
@@ -84,6 +86,16 @@ function updateFilter(filter) {
   render();
 }
 
+function applyManifest(items) {
+  state.items = items;
+  byId("total").textContent = String(items.length);
+  byId("historicalPrivate").textContent = String(items.filter(
+    item => item.historical_visibility === "private").length);
+  byId("historicalPublic").textContent = String(items.filter(
+    item => item.historical_visibility === "public").length);
+  render();
+}
+
 async function main() {
   for (const button of document.querySelectorAll("[data-filter]")) {
     button.addEventListener("click", () => updateFilter(button.dataset.filter));
@@ -94,16 +106,29 @@ async function main() {
     render();
   });
 
+  const picker = byId("catalogFile");
+  // File picker works when index.html is opened offline without a local HTTP server.
+  picker.addEventListener("change", async () => {
+    const file = picker.files?.[0];
+    picker.value = "";
+    if (!file) return;
+    try {
+      if (file.size > 256_000) throw new Error("Manifest too large");
+      const parsed = fromManifest(JSON.parse(await file.text()));
+      applyManifest(parsed);
+      byId("error").hidden = true;
+    } catch {
+      byId("error").hidden = false;
+      byId("resultCount").textContent = state.items.length
+        ? "El archivo local no es válido; se conserva el catálogo anterior."
+        : "El archivo local no contiene un inventario privado válido.";
+    }
+  });
+
   try {
     const response = await fetch("./catalog.json", {cache: "no-store", credentials: "omit"});
     if (!response.ok) throw new Error("Manifest not available");
-    state.items = fromManifest(await response.json());
-    byId("total").textContent = String(state.items.length);
-    byId("historicalPrivate").textContent = String(state.items.filter(
-      item => item.historical_visibility === "private").length);
-    byId("historicalPublic").textContent = String(state.items.filter(
-      item => item.historical_visibility === "public").length);
-    render();
+    applyManifest(fromManifest(await response.json()));
   } catch {
     byId("resultCount").textContent = "Inventario no disponible desde esta dirección";
     byId("error").hidden = false;

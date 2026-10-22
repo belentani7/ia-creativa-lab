@@ -47,6 +47,9 @@
       </div>
       <div class="filters">
         <label class="search"><span class="sr-only">Buscar proyecto o descripción</span><input id="query" type="search" placeholder="Buscar por identidad, palabra clave o propósito..." maxlength="120" autocomplete="off"></label>
+        <label class="catalog-upload" for="catalogFile">Cargar índice local
+          <input id="catalogFile" type="file" accept=".json,application/json" aria-label="Elegir catálogo JSON privado desde el dispositivo">
+        </label>
         <div class="pill-group" aria-label="Filtrar visibilidad histórica" role="group">
           <button class="pill active" type="button" data-filter="all" aria-pressed="true">Todos</button>
           <button class="pill" type="button" data-filter="private" aria-pressed="false">Privados históricos</button>
@@ -55,7 +58,7 @@
       </div>
       <div class="result-info"><span id="resultCount" role="status" aria-live="polite">Preparando índice…</span><span>SNAPSHOTS / SOLO LECTURA</span></div>
       <div id="cards" class="cards"></div>
-      <p id="error" class="error" role="alert" hidden>El catálogo no está disponible. Abre el repositorio mediante un servidor HTTP local: python3 -m http.server 8000. Los archivos originales siguen accesibles desde la carpeta legacy/.</p>
+      <p id="error" class="error" role="alert" hidden>El catálogo no se ha podido abrir automáticamente. Puedes cargar el archivo catalog.json desde tu dispositivo o iniciar el servidor HTTP local. Los archivos originales permanecen en legacy/.</p>
     </section>
     <section class="rules" aria-labelledby="rulesTitle">
       <div><p class="eyebrow">03 / POLÍTICA DE IDENTIDAD</p><h2 id="rulesTitle">Una pregunta no crea un proyecto.</h2></div>
