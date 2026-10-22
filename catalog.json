@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "generated_from": "README.md historical source table (2026-10-02)",
+  "visibility_warning": "Visibility and size reflect past inventory, not current permissions. Never publish archive solely from this file.",
+  "distributable": false,
+  "snapshots": [
+    {
+      "id": "firelab",
+      "original_repository": "firelab",
+      "historical_size_kb": 471,
+      "historical_visibility": "private",
+      "historical_site": "—",
+      "historical_description": "BELENTANI // FIRELAB - Local-first generative creative studio (Next.js + Prisma)",
+      "snapshot_path": "legacy/firelab/",
+      "entrypoint_path": "legacy/firelab/README.md"
+    },
+    {
+      "id": "vertical-content-orchestrator",
+      "original_repository": "vertical-content-orchestrator",
+      "historical_size_kb": 352,
+      "historical_visibility": "private",
+      "historical_site": "—",
+      "historical_description": "Orquestador de contenido vertical - pipeline para Reels/Shorts/TikTok.",
+      "snapshot_path": "legacy/vertical-content-orchestrator/",
+      "entrypoint_path": "legacy/vertical-content-orchestrator/README.md"
+    },
+    {
+      "id": "fashion-stylist-ai",
+      "original_repository": "fashion-stylist-ai",
+      "historical_size_kb": 318,
+      "historical_visibility": "public",
+      "historical_site": "pages+vercel",
+      "historical_description": "AI-powered fashion stylist — visual recommendation engine using computer vision and style",
+      "snapshot_path": "legacy/fashion-stylist-ai/",
+      "entrypoint_path": "legacy/fashion-stylist-ai/README.md"
+    },
+    {
+      "id": "firefly-studio-web",
+      "original_repository": "firefly-studio-web",
+      "historical_size_kb": 286,
+      "historical_visibility": "private",
+      "historical_site": "—",
+      "historical_description": "Firefly Studio - web del estudio creativo audiovisual.",
+      "snapshot_path": "legacy/firefly-studio-web/",
+      "entrypoint_path": "legacy/firefly-studio-web/README.md"
+    },
+    {
+      "id": "hbo-noir-icons",
+      "original_repository": "hbo-noir-icons",
+      "historical_size_kb": 201,
+      "historical_visibility": "public",
+      "historical_site": "pages",
+      "historical_description": "Pack de iconos noir inspirado en la estética HBO. Desplegado en Vercel.",
+      "snapshot_path": "legacy/hbo-noir-icons/",
+      "entrypoint_path": "legacy/hbo-noir-icons/README.md"
+    },
+    {
+      "id": "creative-ai-hub",
+      "original_repository": "creative-ai-hub",
+      "historical_size_kb": 169,
+      "historical_visibility": "private",
+      "historical_site": "—",
+      "historical_description": "creative-ai-hub",
+      "snapshot_path": "legacy/creative-ai-hub/",
+      "entrypoint_path": "legacy/creative-ai-hub/README.md"
+    },
+    {
+      "id": "red-starfield-frontend",
+      "original_repository": "red-starfield-frontend",
+      "historical_size_kb": 164,
+      "historical_visibility": "private",
+      "historical_site": "—",
+      "historical_description": "Frontend con campo de estrellas rojo: pieza visual interactiva.",
+      "snapshot_path": "legacy/red-starfield-frontend/",
+      "entrypoint_path": "legacy/red-starfield-frontend/README.md"
+    },
+    {
+      "id": "lumena",
+      "original_repository": "lumena",
+      "historical_size_kb": 162,
+      "historical_visibility": "private",
+      "historical_site": "—",
+      "historical_description": "Estudio creativo local en español para generar composiciones visuales procedurales, cargar",
+      "snapshot_path": "legacy/lumena/",
+      "entrypoint_path": "legacy/lumena/client/index.html"
+    },
+    {
+      "id": "lumen-local-studio",
+      "original_repository": "lumen-local-studio",
+      "historical_size_kb": 161,
+      "historical_visibility": "private",
+      "historical_site": "—",
+      "historical_description": "Lumen Local Studio - cliente Vite/React + servidor, local-first",
+      "snapshot_path": "legacy/lumen-local-studio/",
+      "entrypoint_path": "legacy/lumen-local-studio/README.md"
+    },
+    {
+      "id": "cinematic-prompt-formatter",
+      "original_repository": "cinematic-prompt-formatter",
+      "historical_size_kb": 99,
+      "historical_visibility": "public",
+      "historical_site": "pages+vercel",
+      "historical_description": "Translate cinematic language into optimized prompts for Stable Diffusion, Flux, and SDXL m",
+      "snapshot_path": "legacy/cinematic-prompt-formatter/",
+      "entrypoint_path": "legacy/cinematic-prompt-formatter/README.md"
+    },
+    {
+      "id": "scroll-world",
+      "original_repository": "scroll-world",
+      "historical_size_kb": 57,
+      "historical_visibility": "private",
+      "historical_site": "—",
+      "historical_description": "https://github.com/user-attachments/assets/b08e641e-985b-4bd4-83ff-6750272d0c37",
+      "snapshot_path": "legacy/scroll-world/",
+      "entrypoint_path": "legacy/scroll-world/README.md"
+    },
+    {
+      "id": "comfyui-json-compiler",
+      "original_repository": "comfyui-json-compiler",
+      "historical_size_kb": 55,
+      "historical_visibility": "public",
+      "historical_site": "pages+vercel",
+      "historical_description": "Translate natural language creative briefs into valid ComfyUI JSON workflows using LLMs.",
+      "snapshot_path": "legacy/comfyui-json-compiler/",
+      "entrypoint_path": "legacy/comfyui-json-compiler/README.md"
+    },
+    {
+      "id": "gpu-cost-optimizer",
+      "original_repository": "gpu-cost-optimizer",
+      "historical_size_kb": 43,
+      "historical_visibility": "public",
+      "historical_site": "pages+vercel",
+      "historical_description": "Optimize GPU compute costs in diffusion pipelines by up to 70%.",
+      "snapshot_path": "legacy/gpu-cost-optimizer/",
+      "entrypoint_path": "legacy/gpu-cost-optimizer/README.md"
+    },
+    {
+      "id": "latent-consistency-bench",
+      "original_repository": "latent-consistency-bench",
+      "historical_size_kb": 43,
+      "historical_visibility": "public",
+      "historical_site": "pages+vercel",
+      "historical_description": "Benchmarking visual consistency in AI-generated content.",
+      "snapshot_path": "legacy/latent-consistency-bench/",
+      "entrypoint_path": "legacy/latent-consistency-bench/README.md"
+    },
+    {
+      "id": "temporal-artifact-detector",
+      "original_repository": "temporal-artifact-detector",
+      "historical_size_kb": 43,
+      "historical_visibility": "public",
+      "historical_site": "pages+vercel",
+      "historical_description": "Python tool for detecting flickering and temporal artifacts in AI-generated videos.",
+      "snapshot_path": "legacy/temporal-artifact-detector/",
+      "entrypoint_path": "legacy/temporal-artifact-detector/README.md"
+    },
+    {
+      "id": "llm-vfx-orchestrator",
+      "original_repository": "llm-vfx-orchestrator",
+      "historical_size_kb": 41,
+      "historical_visibility": "public",
+      "historical_site": "pages+vercel",
+      "historical_description": "Autonomous VFX pipeline orchestration using LLMs connected to ComfyUI APIs.",
+      "snapshot_path": "legacy/llm-vfx-orchestrator/",
+      "entrypoint_path": "legacy/llm-vfx-orchestrator/README.md"
+    },
+    {
+      "id": "pbr-validator",
+      "original_repository": "pbr-validator",
+      "historical_size_kb": 38,
+      "historical_visibility": "public",
+      "historical_site": "pages+vercel",
+      "historical_description": "Validates PBR texture sets for correctness and compatibility with game engines.",
+      "snapshot_path": "legacy/pbr-validator/",
+      "entrypoint_path": "legacy/pbr-validator/README.md"
+    },
+    {
+      "id": "misaas",
+      "original_repository": "misaas",
+      "historical_size_kb": 31,
+      "historical_visibility": "public",
+      "historical_site": "pages+vercel",
+      "historical_description": "Frontend SaaS premium con hero WebGL para orquestación de agentes autónomos. Landing page",
+      "snapshot_path": "legacy/misaas/",
+      "entrypoint_path": "legacy/misaas/README.md"
+    },
+    {
+      "id": "ai-fashion-app-frontend",
+      "original_repository": "ai-fashion-app-frontend",
+      "historical_size_kb": 30,
+      "historical_visibility": "public",
+      "historical_site": "pages",
+      "historical_description": "Proyecto frontend del ecosistema Belentani.",
+      "snapshot_path": "legacy/ai-fashion-app-frontend/",
+      "entrypoint_path": "legacy/ai-fashion-app-frontend/README.md"
+    },
+    {
+      "id": "neon",
+      "original_repository": "neon",
+      "historical_size_kb": 29,
+      "historical_visibility": "private",
+      "historical_site": "—",
+      "historical_description": "Neon — cyberpunk visual experiment and generative art playground",
+      "snapshot_path": "legacy/neon/",
+      "entrypoint_path": "legacy/neon/README.md"
+    },
+    {
+      "id": "opendesign",
+      "original_repository": "opendesign",
+      "historical_size_kb": 17,
+      "historical_visibility": "public",
+      "historical_site": "pages+vercel",
+      "historical_description": "Recopilación abierta de sistemas de diseño y maquetas de referencia.",
+      "snapshot_path": "legacy/opendesign/",
+      "entrypoint_path": "legacy/opendesign/README.md"
+    },
+    {
+      "id": "ai-fashion-app-server",
+      "original_repository": "ai-fashion-app-server",
+      "historical_size_kb": 15,
+      "historical_visibility": "private",
+      "historical_site": "—",
+      "historical_description": "Proyecto server del ecosistema Belentani.",
+      "snapshot_path": "legacy/ai-fashion-app-server/",
+      "entrypoint_path": "legacy/ai-fashion-app-server/README.md"
+    },
+    {
+      "id": "premium-effects-registry",
+      "original_repository": "premium-effects-registry",
+      "historical_size_kb": 11,
+      "historical_visibility": "public",
+      "historical_site": "—",
+      "historical_description": "Curated collection of 50+ GitHub repos for premium frontend visual effects — liquid logos,",
+      "snapshot_path": "legacy/premium-effects-registry/",
+      "entrypoint_path": "legacy/premium-effects-registry/README.md"
+    },
+    {
+      "id": "premium-effects",
+      "original_repository": "premium-effects",
+      "historical_size_kb": 9,
+      "historical_visibility": "private",
+      "historical_site": "—",
+      "historical_description": "Colección curada de 50+ repos GitHub para efectos visuales premium en frontend",
+      "snapshot_path": "legacy/premium-effects/",
+      "entrypoint_path": "legacy/premium-effects/README.md"
+    }
+  ]
+}

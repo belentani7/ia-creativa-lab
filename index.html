@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#050a11">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="description" content="Archivo de trabajo privado de IA Creativa LAB. Directorio local de 24 snapshots históricos mantenidos sin mezclar productos.">
+  <title>IA CREATIVA / PRIVATE ARCHIVE WORKBENCH</title>
+  <link rel="stylesheet" href="./workbench/studio.css">
+</head>
+<body>
+<a class="skip" href="#catalog">Saltar al catálogo</a>
+<div class="ambient" aria-hidden="true"></div>
+<div class="app">
+  <header class="top">
+    <a class="brand" href="./" aria-label="IA Creativa Lab, inicio">
+      <span class="symbol" aria-hidden="true">✦</span>
+      <span><strong>IA CREATIVA <em>LAB</em></strong><small>THE PRIVATE ARCHIVE / BELENTANI</small></span>
+    </a>
+    <span class="badge">LOCAL-FIRST <span class="led" aria-hidden="true"></span> SIN PUBLICACIÓN</span>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="headline">
+      <div class="hero-copy">
+        <p class="eyebrow">REGISTRO 01 / COLECCIÓN CONSERVADA</p>
+        <h1 id="headline">Veinticuatro historias.<br><span>Sin perder ninguna.</span></h1>
+        <p>Este es el archivo privado de versiones de IA Creativa. Cada proyecto conserva su identidad, sus documentos y su código original en un directorio independiente. Aquí se navega el legado; no se fusiona, publica ni sustituye ningún producto.</p>
+        <a href="#catalog" class="button primary">Explorar el inventario <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="visual" aria-label="Gráfico abstracto editorial del núcleo de archivos">
+        <div class="ripple r1"></div><div class="ripple r2"></div><div class="ripple r3"></div>
+        <div class="center"><span>24</span><small>IDENTIDADES<br>INDEPENDIENTES</small></div>
+        <div class="visual-caption">CONSERVACIÓN DE CONTEXTO / SIN NORMALIZACIÓN DE PROYECTOS</div>
+      </div>
+    </section>
+    <section class="metrics" aria-label="Métricas históricas del índice">
+      <div><strong id="total">—</strong><span>SNAPSHOTS CATALOGADOS</span></div>
+      <div><strong id="historicalPrivate">—</strong><span>MARCADOS PRIVADOS EN ORIGEN</span></div>
+      <div><strong id="historicalPublic">—</strong><span>MARCADOS PÚBLICOS EN ORIGEN</span></div>
+      <div><strong>0</strong><span>PUBLICACIONES REALIZADAS AQUÍ</span></div>
+    </section>
+    <section class="catalog-section" id="catalog" aria-labelledby="catalogTitle">
+      <div class="section-head">
+        <div><p class="eyebrow">02 / CUSTODIA Y NAVEGACIÓN</p><h2 id="catalogTitle">Explorador de origen.</h2></div>
+        <p>Inventario histórico, no estado actual de GitHub. Una marca «público» de 2026-10-02 no autoriza redistribución.</p>
+      </div>
+      <div class="filters">
+        <label class="search"><span class="sr-only">Buscar proyecto o descripción</span><input id="query" type="search" placeholder="Buscar por identidad, palabra clave o propósito..." maxlength="120" autocomplete="off"></label>
+        <label class="catalog-upload" for="catalogFile">Cargar índice local
+          <input id="catalogFile" type="file" accept=".json,application/json" aria-label="Elegir catálogo JSON privado desde el dispositivo">
+        </label>
+        <div class="pill-group" aria-label="Filtrar visibilidad histórica" role="group">
+          <button class="pill active" type="button" data-filter="all" aria-pressed="true">Todos</button>
+          <button class="pill" type="button" data-filter="private" aria-pressed="false">Privados históricos</button>
+          <button class="pill" type="button" data-filter="public" aria-pressed="false">Públicos históricos</button>
+        </div>
+      </div>
+      <div class="result-info"><span id="resultCount" role="status" aria-live="polite">Preparando índice…</span><span>SNAPSHOTS / SOLO LECTURA</span></div>
+      <div id="cards" class="cards"></div>
+      <p id="error" class="error" role="alert" hidden>El catálogo no se ha podido abrir automáticamente. Puedes cargar el archivo catalog.json desde tu dispositivo o iniciar el servidor HTTP local. Los archivos originales permanecen en legacy/.</p>
+    </section>
+    <section class="rules" aria-labelledby="rulesTitle">
+      <div><p class="eyebrow">03 / POLÍTICA DE IDENTIDAD</p><h2 id="rulesTitle">Una pregunta no crea un proyecto.</h2></div>
+      <div class="rules-grid">
+        <article><span>01</span><h3>Sin fusión automática</h3><p>Una similitud de nombre no significa una misma marca. Los 24 snapshots son independientes del resto del ecosistema.</p></article>
+        <article><span>02</span><h3>Sin pérdidas históricas</h3><p>No se reescriben ni se eliminan las carpetas de legacy. El inventario enlaza a su documentación para consultar el propósito original.</p></article>
+        <article><span>03</span><h3>Sin publicación accidental</h3><p>Este repositorio contiene material privado y posiblemente de terceros. No se permite convertirlo directamente en una web pública.</p></article>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><span>IA CREATIVA / BELENTANI — COLECCIÓN PRIVADA</span><span>IDENTIDAD · PROCEDENCIA · CONSERVACIÓN</span></footer>
+</div>
+<script type="module" src="./workbench/studio.js"></script>
+</body>
+</html>

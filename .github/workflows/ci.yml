@@ -1,0 +1,31 @@
+name: IA Creativa LAB / private archive integrity
+on:
+  push:
+    branches: [main, "release/**"]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  internal-archive:
+    name: Provenance / no missing entrypoints / 24 separate identities
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Static UI syntax
+        run: node --check workbench/studio.js
+      - name: Validate original folder boundaries and source links
+        run: node --test tests/workbench.test.mjs
+      - name: Confirm private archive entrypoints
+        run: |
+          test -s index.html
+          test -s workbench/studio.css
+          test -s workbench/studio.js
+          test -s catalog.json
+      - name: No deployment by this workflow
+        run: echo "Archive verification only. Never publish this repository as a website."
