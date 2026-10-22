@@ -36,6 +36,10 @@ Cada carpeta de `legacy/` conserva el contenido del repo original sin reescribir
 | `legacy/premium-effects` | [`premium-effects`](https://github.com/belentani7/premium-effects) | 9 | priv | — | Colección curada de 50+ repos GitHub para efectos visuales premium en frontend |
 
 
+## Límite de importación del índice privado
+
+La carga local rechaza índices que alteren las **24 identidades** y rutas conservadas, tamaños o textos fuera de límites, visibilidades distintas de las históricas y referencias de archivos que escapen de \`legacy/<identidad>/\`. Se utiliza \`textContent\` en la interfaz, nunca HTML arbitrario de los archivos importados. El índice sigue siendo privado y su importación no autoriza publicar ningún snapshot.
+
 ## Archivo de consulta privado — Workbench (octubre de 2026)
 
 Se ha añadido una **interfaz editorial de consulta y búsqueda**, no una fusión de nuevas aplicaciones. `index.html`, `workbench/studio.css` y `workbench/studio.js` implementan una biblioteca corporativa de los **24 snapshots originales**, con búsqueda por identidad/propósito, filtros de visibilidad **histórica** y acceso a un archivo real de cada carpeta. El catálogo estructurado es `catalog.json`.
