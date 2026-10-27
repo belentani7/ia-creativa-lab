@@ -10,14 +10,44 @@ const element = (tag, value, cls = "") => {
 };
 const normalize = raw => String(raw || "").toLocaleLowerCase("es").normalize("NFD")
   .replace(/[\u0300-\u036f]/g, "");
+// Trusted archive identities and historical metadata are fixed to the shipped snapshot.
+// Imported JSON may update descriptive text, but cannot invent or relabel source projects.
+const CANONICAL_SNAPSHOTS = new Map([
+  ["firelab", "private", 471],
+  ["vertical-content-orchestrator", "private", 352],
+  ["fashion-stylist-ai", "public", 318],
+  ["firefly-studio-web", "private", 286],
+  ["hbo-noir-icons", "public", 201],
+  ["creative-ai-hub", "private", 169],
+  ["red-starfield-frontend", "private", 164],
+  ["lumena", "private", 162],
+  ["lumen-local-studio", "private", 161],
+  ["cinematic-prompt-formatter", "public", 99],
+  ["scroll-world", "private", 57],
+  ["comfyui-json-compiler", "public", 55],
+  ["gpu-cost-optimizer", "public", 43],
+  ["latent-consistency-bench", "public", 43],
+  ["temporal-artifact-detector", "public", 43],
+  ["llm-vfx-orchestrator", "public", 41],
+  ["pbr-validator", "public", 38],
+  ["misaas", "public", 31],
+  ["ai-fashion-app-frontend", "public", 30],
+  ["neon", "private", 29],
+  ["opendesign", "public", 17],
+  ["ai-fashion-app-server", "private", 15],
+  ["premium-effects-registry", "public", 11],
+  ["premium-effects", "private", 9],
+].map(([id, visibility, size]) => [id, { visibility, size }]));
+
 const fromManifest = raw => {
   if (!raw || raw.schema_version !== 1 || raw.distributable !== false ||
-      !Array.isArray(raw.snapshots) || raw.snapshots.length !== 24) {
+      !Array.isArray(raw.snapshots) || raw.snapshots.length !== CANONICAL_SNAPSHOTS.size) {
     throw new Error("Invalid private archive registry");
   }
   const seen = new Set();
   return raw.snapshots.map(item => {
-    if (!item || typeof item.id !== "string" || item.id.length > 100 ||
+    const expected = item && CANONICAL_SNAPSHOTS.get(item.id);
+    if (!expected || typeof item.id !== "string" || item.id.length > 100 ||
         !/^[a-z0-9-]+$/.test(item.id) ||
         typeof item.historical_description !== "string" || item.historical_description.length > 2000 ||
         typeof item.historical_site !== "string" || item.historical_site.length > 300 ||
@@ -30,6 +60,10 @@ const fromManifest = raw => {
         !/^legacy\/[a-z0-9-]+\/[a-zA-Z0-9_./-]+$/.test(item.entrypoint_path) ||
         item.entrypoint_path.includes("..") ||
         !["private", "public"].includes(item.historical_visibility) ||
+        item.historical_visibility !== expected.visibility ||
+        item.historical_size_kb !== expected.size ||
+        item.entrypoint_path !== item.snapshot_path +
+          (item.id === "lumena" ? "client/index.html" : "README.md") ||
         seen.has(item.id)) {
       throw new Error("Invalid independent project identity");
     }

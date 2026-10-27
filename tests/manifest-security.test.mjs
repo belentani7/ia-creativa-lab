@@ -53,3 +53,31 @@ test("bounds untrusted text and refuses tampered distribution flag",()=>{
  const doc=copy();doc.distributable=true;
  assert.throws(()=>validate(doc));
 });
+
+test("rejects an invented identity even with internally consistent paths", () => {
+ const doc=copy();
+ Object.assign(doc.snapshots[0], {
+   id:"invented-project", original_repository:"invented-project",
+   snapshot_path:"legacy/invented-project/",
+   entrypoint_path:"legacy/invented-project/README.md"
+ });
+ assert.throws(()=>validate(doc), /Invalid independent project identity/);
+});
+
+test("rejects rewriting the historical privacy label or recorded size", () => {
+ for(const patch of [
+   {historical_visibility:"public"},
+   {historical_size_kb:0},
+   {historical_size_kb:472}
+ ]) {
+   const doc=copy();
+   Object.assign(doc.snapshots[0],patch);
+   assert.throws(()=>validate(doc), /Invalid independent project identity/);
+ }
+});
+
+test("rejects an alternative entrypoint inside the same archived project", () => {
+ const doc=copy();
+ doc.snapshots[0].entrypoint_path="legacy/firelab/other.html";
+ assert.throws(()=>validate(doc), /Invalid independent project identity/);
+});
