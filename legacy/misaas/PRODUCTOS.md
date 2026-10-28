@@ -14,7 +14,7 @@ operativo, sin dependencias de build: HTML, CSS y JavaScript puro.
 
 | | |
 |---|---|
-| **Web** | [belentani7.github.io/misaas](https://belentani7.github.io/misaas/) |
+| **Web** | [belentani7.github.io/misaas](https://github.com/belentani7/misaas) |
 | Stack | HTML + CSS + JS (cero dependencias) |
 
 ---
@@ -26,7 +26,7 @@ cumplimiento RGPD desde el diseño.
 
 | | |
 |---|---|
-| **Web** | [belentani7.github.io/belentani-studio](https://belentani7.github.io/belentani-studio/) |
+| **Web** | [belentani7.github.io/belentani-studio](https://github.com/belentani7/belentani-studio) |
 | Precio | 0 € |
 | Cumplimiento | RGPD |
 
@@ -39,8 +39,8 @@ Forja lingüística: traducción y adaptación multilingüe.
 | Versión | Qué es | Enlace |
 |---|---|---|
 | **Principal** | Herramienta de traducción | [linguaforge.vercel.app](https://linguaforge.vercel.app) |
-| v2 | Aprendizaje con progresión CEFR y repetición espaciada | [belentani7.github.io/linguaforge-v2](https://belentani7.github.io/linguaforge-v2/) |
-| Empresa | Producto con pagos Stripe y área de cliente | [lingua-aberta-empresa](https://belentani7.github.io/lingua-aberta-empresa/) |
+| v2 | Aprendizaje con progresión CEFR y repetición espaciada | [belentani7.github.io/linguaforge-v2](https://github.com/belentani7/linguaforge-v2) |
+| Empresa | Producto con pagos Stripe y área de cliente | [lingua-aberta-empresa](https://github.com/belentani7/lingua-aberta-empresa) |
 
 **La familia LinguaForge:** v1 es la herramienta, v2 añade el método de
 aprendizaje, y la versión empresa añade el modelo de negocio. Son capas
@@ -54,7 +54,7 @@ Generación automática de vídeos cortos.
 
 | | |
 |---|---|
-| **Web** | [belentani7.github.io/belentani-video-forge](https://belentani7.github.io/belentani-video-forge/) |
+| **Web** | [belentani7.github.io/belentani-video-forge](https://github.com/belentani7/belentani-video-forge) |
 
 ---
 
@@ -64,9 +64,9 @@ Suite web para producción musical. Tres puertas según lo que necesites:
 
 | Versión | Para qué | Enlace |
 |---|---|---|
-| **Suite** | Producción integrada | [duck-studio-suite](https://belentani7.github.io/duck-studio-suite/) |
-| Full Studio Pro | FL Studio + vault | [duck-full-studio-pro](https://belentani7.github.io/duck-full-studio-pro/) |
-| Studio OS v2 | Paquete unificado | [duck-studio-os-v2](https://belentani7.github.io/duck-studio-os-v2/) |
+| **Suite** | Producción integrada | [duck-studio-suite](https://github.com/belentani7/duck-studio-suite) |
+| Full Studio Pro | FL Studio + vault | [duck-full-studio-pro](https://github.com/belentani7/duck-full-studio-pro) |
+| Studio OS v2 | Paquete unificado | [duck-studio-os-v2](https://github.com/belentani7/duck-studio-os-v2) |
 
 ---
 
