@@ -20,7 +20,7 @@ jobs:
       - name: Static UI syntax
         run: node --check workbench/studio.js
       - name: Validate original folder boundaries and source links
-        run: node --test tests/workbench.test.mjs
+        run: node --test tests/*.test.mjs
       - name: Confirm private archive entrypoints
         run: |
           test -s index.html
