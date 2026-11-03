@@ -60,3 +60,16 @@ El test revisa que los directorios reales coincidan exactamente con las 24 ident
 La tabla original anterior registra tamaños y visibilidad del inventario histórico fechado en 2026-10-02. **No es una lectura de permisos actuales** y `noindex` no sustituye controles de acceso. El código privado o de terceros no obtiene automáticamente licencias de redistribución por estar archivado aquí.
 
 **Estado:** implementación guardada en una rama y PR de revisión. Es un producto **interno**, no una web pública; antes de cualquier redistribución se deben separar los materiales autorizados y verificar derechos y visibilidad actual. Todos los proyectos individuales siguen siendo independientes.
+---
+
+## Ficha del proyecto
+
+| Campo | Valor |
+|---|---|
+| Autor | Belentani / NOIACORE |
+| Época de desarrollo | 2026 |
+| Contacto | [belentani7studio@proton.me](mailto:belentani7studio@proton.me) |
+| Código | https://github.com/belentani7/ia-creativa-lab |
+| Demo desplegada | https://belentani7.github.io/ia-creativa-lab/ |
+
+Quality baseline: CI + Dependabot + CodeQL + reglas de agentes por [premium-factory](https://github.com/belentani7/premium-factory-api).
