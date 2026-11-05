@@ -4,7 +4,6 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Optional, Union
 
 import numpy as np
 from PIL import Image
@@ -22,7 +21,7 @@ class PBRSet:
     paths: dict[str, str]
 
 
-def load_texture(path: Union[str, Path]) -> np.ndarray:
+def load_texture(path: str | Path) -> np.ndarray:
     """Load a texture file as a numpy array.
 
     Returns:
@@ -40,11 +39,11 @@ def load_texture(path: Union[str, Path]) -> np.ndarray:
 
 
 def load_pbr_set(
-    albedo: Union[str, Path],
-    normal: Union[str, Path],
-    roughness: Union[str, Path],
-    metallic: Union[str, Path],
-    ao: Union[str, Path],
+    albedo: str | Path,
+    normal: str | Path,
+    roughness: str | Path,
+    metallic: str | Path,
+    ao: str | Path,
 ) -> PBRSet:
     """Load a complete PBR texture set.
 

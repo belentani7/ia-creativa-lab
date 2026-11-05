@@ -3,15 +3,11 @@
 from __future__ import annotations
 
 import json
-import pytest
-from PIL import Image
 
+import pytest
 from bench.benchmark import ConsistencyBenchmark
 from bench.report import BenchmarkResult
 from bench.test_cases import (
-    CharacterTestCase,
-    EnvironmentTestCase,
-    ProductTestCase,
     default_character_cases,
 )
 

@@ -5,10 +5,8 @@ Command-line interface for Cinematic Prompt Formatter.
 import argparse
 import csv
 import sys
-from typing import List, Optional
-
-from formatter.formatter import format_prompt, format_batch
-from formatter.presets import list_presets, get_preset_names
+from formatter.formatter import format_batch, format_prompt
+from formatter.presets import list_presets
 
 
 def main():
@@ -141,7 +139,7 @@ def handle_format(args):
 def handle_batch(args):
     """Handle the batch command."""
     try:
-        with open(args.input, "r", encoding="utf-8") as f:
+        with open(args.input, encoding="utf-8") as f:
             reader = csv.DictReader(f)
 
             if "description" not in reader.fieldnames:

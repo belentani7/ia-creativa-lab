@@ -2,17 +2,16 @@
 Tests for the mapper module.
 """
 
-import pytest
 from formatter.mapper import (
+    CAMERA_MAP,
+    COLOR_MAP,
     LENS_MAP,
     LIGHTING_MAP,
-    CAMERA_MAP,
     MOOD_MAP,
-    COLOR_MAP,
+    get_all_terms,
     map_single_term,
     map_terms_list,
     map_to_prompt,
-    get_all_terms,
     search_terms,
 )
 

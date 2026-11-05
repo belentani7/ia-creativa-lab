@@ -1,4 +1,4 @@
-﻿# pbr-validator
+# pbr-validator
 
 Validates PBR texture sets for correctness and compatibility with game engines (Unreal Engine, Unity, Godot).
 

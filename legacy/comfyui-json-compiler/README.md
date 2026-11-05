@@ -1,4 +1,4 @@
-﻿# comfyui-json-compiler
+# comfyui-json-compiler
 
 Translate natural language creative briefs into valid ComfyUI JSON workflows using LLMs.
 

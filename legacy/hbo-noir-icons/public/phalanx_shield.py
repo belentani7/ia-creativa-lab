@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
 PHALANX SHIELD - Belentani Noiacore Auto-Adaptive Security Engine
 Versión: 5.0.2 Hardened - Blindaje Supremo Real
@@ -12,16 +11,15 @@ Funcionalidades:
 - Generación de reporte JSON detallado (phalanx_report.json)
 """
 
-import os
-import sys
-import re
-import json
-import hashlib
 import argparse
 import datetime
+import hashlib
+import json
+import os
 import pathlib
+import re
 import stat
-import typing as t
+import sys
 
 # ======================================================================
 # 1. CONFIGURACIÓN Y PATRONES DE ALTA SEGURIDAD
@@ -90,7 +88,7 @@ def get_file_hash(filepath: str, algo: str = "sha256") -> str:
     except Exception:
         return "ERROR_HASH"
 
-def scan_file_for_secrets(filepath: str, content: str) -> t.List[t.Dict]:
+def scan_file_for_secrets(filepath: str, content: str) -> list[dict]:
     findings = []
     for name, pattern in SECRET_PATTERNS.items():
         for match in pattern.finditer(content):
@@ -107,7 +105,7 @@ def scan_file_for_secrets(filepath: str, content: str) -> t.List[t.Dict]:
             })
     return findings
 
-def scan_file_for_unsafe_code(filepath: str, content: str) -> t.List[t.Dict]:
+def scan_file_for_unsafe_code(filepath: str, content: str) -> list[dict]:
     findings = []
     for name, pattern in UNSAFE_PATTERNS.items():
         for match in pattern.finditer(content):
@@ -120,7 +118,7 @@ def scan_file_for_unsafe_code(filepath: str, content: str) -> t.List[t.Dict]:
             })
     return findings
 
-def parse_dependencies(filepath: str) -> t.Dict[str, str]:
+def parse_dependencies(filepath: str) -> dict[str, str]:
     deps = {}
     try:
         with open(filepath, "r", encoding="utf-8") as f:
@@ -133,7 +131,7 @@ def parse_dependencies(filepath: str) -> t.Dict[str, str]:
         pass
     return deps
 
-def audit_dependencies(deps: t.Dict[str, str]) -> t.List[t.Dict]:
+def audit_dependencies(deps: dict[str, str]) -> list[dict]:
     findings = []
     for pkg, ver in deps.items():
         clean_ver = re.sub(r"[^0-9.]", "", ver)
@@ -179,7 +177,7 @@ def fix_file_permissions(filepath: str) -> bool:
 # 3. MOTOR PRINCIPAL: ESCANEO Y MANIFEST
 # ======================================================================
 
-def walk_project(root_path: str, fix: bool = False) -> t.Dict:
+def walk_project(root_path: str, fix: bool = False) -> dict:
     root = pathlib.Path(root_path).resolve()
     report = {
         "project_root": str(root),
@@ -271,7 +269,7 @@ def print_colored(text: str, color: str = "white") -> None:
     }
     print(f"{colors.get(color, '')}{text}{colors['reset']}")
 
-def display_report(report: t.Dict) -> None:
+def display_report(report: dict) -> None:
     print_colored("\n" + "=" * 80, "bold")
     print_colored("🛡️  PHALANX SHIELD - REPORTE DE SEGURIDAD SUPREMO", "cyan")
     print_colored("=" * 80, "bold")

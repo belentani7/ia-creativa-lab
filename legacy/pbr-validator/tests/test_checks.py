@@ -3,16 +3,14 @@
 from __future__ import annotations
 
 import numpy as np
-import pytest
-
 from validator.checks import (
-    check_resolution,
-    check_color_space,
-    check_normal_map_format,
-    check_roughness_range,
-    check_metallic_range,
-    check_ao_range,
     check_albedo_not_overexposed,
+    check_ao_range,
+    check_color_space,
+    check_metallic_range,
+    check_normal_map_format,
+    check_resolution,
+    check_roughness_range,
     check_seamlessness,
 )
 

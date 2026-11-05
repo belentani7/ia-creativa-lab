@@ -3,17 +3,11 @@ Main formatter for converting cinematic descriptions to AI prompts.
 """
 
 import re
-from typing import List, Optional
-
 from formatter.mapper import (
-    LENS_MAP,
-    LIGHTING_MAP,
-    CAMERA_MAP,
-    MOOD_MAP,
-    COLOR_MAP,
     map_single_term,
 )
-from formatter.presets import PRESETS, get_preset
+from formatter.presets import get_preset
+from typing import List, Optional
 
 
 def format_prompt(cinematic_description: str, style: Optional[str] = None, model: str = "sdxl") -> str:

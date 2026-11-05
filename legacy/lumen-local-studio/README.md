@@ -1,4 +1,4 @@
-﻿# lumen-local-studio
+# lumen-local-studio
 
 Lumen Local Studio - estudio visual local (cliente + servidor).
 

@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import json
 from dataclasses import dataclass, field
-from typing import Any, Optional
+from typing import Any
 
 import numpy as np
 
@@ -13,9 +13,9 @@ from validator.checks import (
     check_seamlessness,
 )
 from validator.consistency import (
-    normal_roughness_consistency,
     albedo_metallic_consistency,
     ao_geometry_consistency,
+    normal_roughness_consistency,
 )
 from validator.textures import PBRSet
 
@@ -146,7 +146,7 @@ class ValidationReport:
 
 def generate_report(
     pbr: PBRSet,
-    engine_issues: Optional[dict[str, list[str]]] = None,
+    engine_issues: dict[str, list[str]] | None = None,
 ) -> ValidationReport:
     """Generate a comprehensive validation report for a PBR set.
 

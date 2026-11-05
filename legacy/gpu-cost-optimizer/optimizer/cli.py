@@ -14,7 +14,7 @@ except ImportError:
 from optimizer.analyzer import analyze_workflow
 from optimizer.pricing import GPU_PRICES, list_gpus
 from optimizer.profiler import load_workflow, profile_workflow
-from optimizer.recommender import compare_gpus, recommend_gpu, recommend_settings
+from optimizer.recommender import compare_gpus, recommend_settings
 from optimizer.report import CostReportData, savings_summary, to_markdown
 
 
@@ -29,7 +29,6 @@ if click is not None:
     @click.group()
     def main():
         """GPU Cost Optimizer - optimize diffusion pipeline costs."""
-        pass
 
     @main.command()
     @click.argument("workflow_path", type=click.Path(exists=True))

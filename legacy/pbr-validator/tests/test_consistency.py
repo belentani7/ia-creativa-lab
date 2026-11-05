@@ -3,12 +3,10 @@
 from __future__ import annotations
 
 import numpy as np
-import pytest
-
 from validator.consistency import (
-    normal_roughness_consistency,
     albedo_metallic_consistency,
     ao_geometry_consistency,
+    normal_roughness_consistency,
 )
 
 

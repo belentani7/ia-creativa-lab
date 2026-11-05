@@ -6,8 +6,7 @@ Mock implementations use numpy/Pillow; swap with real model calls as needed.
 
 from __future__ import annotations
 
-import math
-from typing import Any, Sequence
+from collections.abc import Sequence
 
 import numpy as np
 from PIL import Image

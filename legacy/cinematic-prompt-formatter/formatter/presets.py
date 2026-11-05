@@ -2,7 +2,7 @@
 Preset styles for common cinematic looks.
 """
 
-from typing import Dict, Optional, Any
+from typing import Any, Dict, Optional
 
 # =============================================================================
 # PRESET DEFINITIONS

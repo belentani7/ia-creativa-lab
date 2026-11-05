@@ -2,7 +2,7 @@
 Parse cinematic terms into structured dictionaries.
 """
 
-from typing import Dict, Optional
+from typing import Dict
 
 
 def parse_lens(term: str) -> Dict[str, str]:

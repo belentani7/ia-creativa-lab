@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import uuid
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from typing import Any
 
 from .comfyui_client import ComfyUIClient
@@ -46,7 +46,7 @@ class VFPPipeline:
         job_id = str(uuid.uuid4())[:8]
         sm = StateMachine()
         self._state[job_id] = sm
-        result = PipelineResult(job_id=job_id, status=PipelineState.PENDING, started_at=datetime.now(timezone.utc))
+        result = PipelineResult(job_id=job_id, status=PipelineState.PENDING, started_at=datetime.now(UTC))
 
         try:
             sm.transition(PipelineState.RUNNING, "Starting pipeline")
@@ -83,7 +83,7 @@ class VFPPipeline:
             result.status = PipelineState.FAILED
             result.error = str(exc)
 
-        result.finished_at = datetime.now(timezone.utc)
+        result.finished_at = datetime.now(UTC)
         return result
 
     async def retry_with_corrections(
@@ -95,7 +95,7 @@ class VFPPipeline:
         job_id = str(uuid.uuid4())[:8]
         sm = StateMachine()
         self._state[job_id] = sm
-        result = PipelineResult(job_id=job_id, status=PipelineState.CORRECTING, started_at=datetime.now(timezone.utc))
+        result = PipelineResult(job_id=job_id, status=PipelineState.CORRECTING, started_at=datetime.now(UTC))
 
         try:
             for i in range(attempt, self._config.max_retries):
@@ -145,7 +145,7 @@ class VFPPipeline:
             result.status = PipelineState.FAILED
             result.error = str(exc)
 
-        result.finished_at = datetime.now(timezone.utc)
+        result.finished_at = datetime.now(UTC)
         return result
 
     def get_status(self, job_id: str) -> PipelineStatus | None:

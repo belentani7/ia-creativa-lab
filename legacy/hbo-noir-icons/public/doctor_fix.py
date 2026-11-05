@@ -4,8 +4,6 @@
 Created for Pedro Belentani (@belentani7)
 """
 
-import os
-import sys
 import argparse
 from pathlib import Path
 

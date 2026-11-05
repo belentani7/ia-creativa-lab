@@ -20,6 +20,7 @@ No numpy/ImageMagick needed — pure PIL. Pairs with SKILL.md Step 3.
 import os
 import sys
 from collections import deque
+
 from PIL import Image, ImageFilter
 
 TOL = float(os.environ.get("TOL", "34"))   # RGB Euclidean distance counted as background

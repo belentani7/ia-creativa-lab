@@ -3,11 +3,9 @@
 from __future__ import annotations
 
 import random
-from typing import Any, Callable, Protocol
+from typing import Any, Protocol
 
 import numpy as np
-from PIL import Image
-
 from bench.metrics import (
     aesthetic_score,
     geometric_consistency,
@@ -22,9 +20,8 @@ from bench.test_cases import (
     EnvironmentTestCase,
     ProductTestCase,
     default_character_cases,
-    default_environment_cases,
-    default_product_cases,
 )
+from PIL import Image
 
 
 class GenerationFn(Protocol):

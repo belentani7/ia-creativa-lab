@@ -1,7 +1,7 @@
 """Test fixtures for temporal artifact detector."""
 
-import pytest
 import numpy as np
+import pytest
 
 
 @pytest.fixture
@@ -26,7 +26,7 @@ def flickering_frames():
     """Create frames with intentional brightness flickering."""
     frames = []
     base = np.full((100, 100, 3), 128, dtype=np.uint8)
-    
+
     for i in range(10):
         if i % 2 == 0:
             # Bright frame
@@ -35,7 +35,7 @@ def flickering_frames():
             # Dark frame
             frame = np.clip(base - 80, 0, 255).astype(np.uint8)
         frames.append(frame)
-    
+
     return frames
 
 
@@ -44,13 +44,13 @@ def stable_frames():
     """Create frames with minimal variation (stable video)."""
     frames = []
     base = np.random.randint(50, 200, (100, 100, 3), dtype=np.uint8)
-    
+
     for i in range(10):
         # Add very small random noise
         noise = np.random.randint(-2, 3, (100, 100, 3), dtype=np.int16)
         frame = np.clip(base.astype(np.int16) + noise, 0, 255).astype(np.uint8)
         frames.append(frame)
-    
+
     return frames
 
 
@@ -58,10 +58,10 @@ def stable_frames():
 def drift_frames():
     """Create frames with gradual identity drift."""
     frames = []
-    
+
     # Start with one identity
     base_identity = np.random.randint(50, 200, (100, 100, 3), dtype=np.uint8)
-    
+
     for i in range(10):
         # Gradually shift the identity
         shift = int(i * 10)
@@ -71,5 +71,5 @@ def drift_frames():
             255,
         ).astype(np.uint8)
         frames.append(frame)
-    
+
     return frames

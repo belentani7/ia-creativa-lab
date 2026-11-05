@@ -2,14 +2,10 @@
 
 from __future__ import annotations
 
-import tempfile
-from pathlib import Path
-
 import numpy as np
 import pytest
 from PIL import Image
-
-from validator.textures import load_texture, load_pbr_set, PBRSet
+from validator.textures import PBRSet, load_pbr_set, load_texture
 
 
 @pytest.fixture

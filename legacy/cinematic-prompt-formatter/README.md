@@ -1,4 +1,4 @@
-﻿# Cinematic Prompt Formatter
+# Cinematic Prompt Formatter
 
 Translate cinematic language into optimized prompts for Stable Diffusion, Flux, and SDXL models.
 

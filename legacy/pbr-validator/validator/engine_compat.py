@@ -4,14 +4,12 @@ from __future__ import annotations
 
 from typing import Any
 
-import numpy as np
-
 from validator.checks import (
+    check_albedo_not_overexposed,
+    check_ao_range,
+    check_metallic_range,
     check_normal_map_format,
     check_roughness_range,
-    check_metallic_range,
-    check_ao_range,
-    check_albedo_not_overexposed,
 )
 from validator.textures import PBRSet
 

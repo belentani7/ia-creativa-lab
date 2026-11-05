@@ -2,13 +2,12 @@
 Tests for the parser module.
 """
 
-import pytest
 from formatter.parser import (
+    parse_camera,
+    parse_cinematic_term,
     parse_lens,
     parse_lighting,
-    parse_camera,
     parse_mood,
-    parse_cinematic_term,
 )
 
 

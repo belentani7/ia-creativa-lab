@@ -1,14 +1,14 @@
 """Main analysis pipeline for temporal artifact detection."""
 
-import cv2
-import numpy as np
 from typing import Optional
 
-from detector.report import AnalysisReport, FlickerEvent, DriftReport, TextureIssue
-from detector.optical_flow import compute_flow, flow_consistency
+import cv2
+import numpy as np
+
 from detector.identity import track_identity
-from detector.texture import detect_texture_flicker, texture_delta
 from detector.metrics import artifact_score
+from detector.report import AnalysisReport, DriftReport, FlickerEvent, TextureIssue
+from detector.texture import detect_texture_flicker, texture_delta
 
 
 def _compute_brightness(frame: np.ndarray) -> float:
@@ -37,21 +37,21 @@ def detect_flickering(
     """
     if len(frames) < 2:
         return []
-    
+
     events = []
-    
+
     # Compute brightness for each frame
     brightness_values = [_compute_brightness(f) for f in frames]
-    
+
     for i in range(1, len(frames)):
         prev_bright = brightness_values[i - 1]
         curr_bright = brightness_values[i]
-        
+
         if prev_bright > 0:
             change = abs(curr_bright - prev_bright) / prev_bright
         else:
             change = abs(curr_bright - prev_bright)
-        
+
         if change > brightness_threshold:
             # Determine severity
             if change > brightness_threshold * 3:
@@ -60,13 +60,13 @@ def detect_flickering(
                 severity = "medium"
             else:
                 severity = "low"
-            
+
             events.append(FlickerEvent(
                 frame_index=i,
                 brightness_change=change,
                 severity=severity,
             ))
-    
+
     return events
 
 
@@ -92,23 +92,23 @@ def detect_identity_drift(
             max_drift=0.0,
             drift_frames=[],
         )
-    
+
     ref_idx = reference_frame if reference_frame is not None else 0
-    
+
     # Track identity
     similarities = track_identity(frames)
-    
+
     # Find drift frames (below threshold)
     drift_frames = []
     max_drift = 0.0
-    
+
     for i, sim in enumerate(similarities):
         drift = 1.0 - sim
         if drift > max_drift:
             max_drift = drift
         if sim < drift_threshold:
             drift_frames.append(i)
-    
+
     return DriftReport(
         reference_frame=ref_idx,
         similarities=similarities,
@@ -138,20 +138,20 @@ def analyze_frames(
     """
     if not frames:
         return AnalysisReport(frame_count=0, artifact_score=0.0)
-    
+
     # Detect flickering
     flicker_events = detect_flickering(frames, brightness_threshold=flicker_threshold)
-    
+
     # Detect identity drift
     drift_report = detect_identity_drift(
         frames,
         reference_frame=reference_frame,
         drift_threshold=drift_threshold,
     )
-    
+
     # Detect texture flicker
     flicker_frame_indices = detect_texture_flicker(frames, threshold=texture_threshold)
-    
+
     # Convert to TextureIssue objects
     texture_issues = []
     for idx in flicker_frame_indices:
@@ -161,7 +161,7 @@ def analyze_frames(
             delta=delta,
             feature_type="texture",
         ))
-    
+
     # Create report
     report = AnalysisReport(
         flicker_events=flicker_events,
@@ -169,10 +169,10 @@ def analyze_frames(
         texture_issues=texture_issues,
         frame_count=len(frames),
     )
-    
+
     # Compute artifact score
     report.artifact_score = artifact_score(report)
-    
+
     return report
 
 
@@ -203,28 +203,28 @@ def analyze_video(
     cap = cv2.VideoCapture(video_path)
     if not cap.isOpened():
         raise ValueError(f"Could not open video: {video_path}")
-    
+
     try:
         frames = []
         frame_idx = 0
-        
+
         while True:
             ret, frame = cap.read()
             if not ret:
                 break
-            
+
             # Sample frames
             if frame_idx % sample_rate == 0:
                 frames.append(frame)
-            
+
             frame_idx += 1
-            
+
             # Check max frames
             if max_frames and len(frames) >= max_frames:
                 break
     finally:
         cap.release()
-    
+
     return analyze_frames(
         frames,
         flicker_threshold=flicker_threshold,

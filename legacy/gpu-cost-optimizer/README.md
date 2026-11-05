@@ -1,4 +1,4 @@
-﻿# gpu-cost-optimizer
+# gpu-cost-optimizer
 
 Optimize GPU compute costs in diffusion pipelines by up to 70%.
 

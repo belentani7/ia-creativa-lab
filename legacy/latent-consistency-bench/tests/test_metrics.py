@@ -4,8 +4,6 @@ from __future__ import annotations
 
 import numpy as np
 import pytest
-from PIL import Image
-
 from bench.metrics import (
     aesthetic_score,
     geometric_consistency,
@@ -14,6 +12,7 @@ from bench.metrics import (
     pbr_compliance,
     temporal_stability,
 )
+from PIL import Image
 
 
 class TestIdentitySimilarity:

@@ -11,7 +11,6 @@ from orchestrator.llm_agents import (
     CorrectionAgent,
     DirectorAgent,
     QAInspectorAgent,
-    _call_llm,
 )
 
 
@@ -69,8 +68,8 @@ def test_correction_agent_apply_patch(llm_config):
 
 class TestResolveApi:
     def test_anthropic(self):
-        from orchestrator.llm_agents import _resolve_api
         from orchestrator.config import LLMProviderConfig
+        from orchestrator.llm_agents import _resolve_api
 
         cfg = LLMProviderConfig(model="claude-sonnet-4-20250514", api_key="key")
         url, headers = _resolve_api(cfg)
@@ -78,8 +77,8 @@ class TestResolveApi:
         assert headers["x-api-key"] == "key"
 
     def test_other(self):
-        from orchestrator.llm_agents import _resolve_api
         from orchestrator.config import LLMProviderConfig
+        from orchestrator.llm_agents import _resolve_api
 
         cfg = LLMProviderConfig(model="glm-4v-plus", api_key="key")
         url, headers = _resolve_api(cfg)

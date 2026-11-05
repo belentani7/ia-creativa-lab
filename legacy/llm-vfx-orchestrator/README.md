@@ -1,4 +1,4 @@
-﻿# llm-vfx-orchestrator
+# llm-vfx-orchestrator
 
 Autonomous VFX pipeline orchestration using LLMs (Claude, Qwen, GLM) connected to ComfyUI APIs. Automates render error correction through an intelligent feedback loop.
 

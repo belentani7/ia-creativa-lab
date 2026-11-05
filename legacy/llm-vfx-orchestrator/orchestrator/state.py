@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import enum
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 
 class PipelineState(enum.Enum):
@@ -30,7 +30,7 @@ _VALID_TRANSITIONS: dict[PipelineState, set[PipelineState]] = {
 class StateTransition:
     from_state: PipelineState
     to_state: PipelineState
-    timestamp: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
+    timestamp: datetime = field(default_factory=lambda: datetime.now(UTC))
     reason: str = ""
 
 

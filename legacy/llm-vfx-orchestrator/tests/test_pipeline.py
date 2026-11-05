@@ -6,7 +6,7 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from orchestrator.pipeline import VFPPipeline, PipelineResult, _avg_score
+from orchestrator.pipeline import PipelineResult, VFPPipeline, _avg_score
 from orchestrator.state import PipelineState
 
 

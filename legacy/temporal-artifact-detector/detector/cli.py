@@ -2,7 +2,6 @@
 
 import argparse
 import sys
-from pathlib import Path
 
 from detector.analyzer import analyze_video
 
@@ -15,12 +14,12 @@ def cmd_analyze(args):
             max_frames=args.max_frames,
             sample_rate=args.sample_rate,
         )
-        
+
         if args.output == "json":
             print(report.to_json())
         else:
             print(report.to_markdown())
-    
+
     except Exception as e:
         print(f"Error: {e}", file=sys.stderr)
         sys.exit(1)
@@ -31,20 +30,20 @@ def cmd_compare(args):
     try:
         report_a = analyze_video(args.video_a)
         report_b = analyze_video(args.video_b)
-        
+
         print("# Video Comparison\n")
         print("## Video A")
         print(f"- Frames: {report_a.frame_count}")
         print(f"- Artifact Score: {report_a.artifact_score:.3f}")
         print(f"- Flicker Events: {len(report_a.flicker_events)}")
         print(f"- Texture Issues: {len(report_a.texture_issues)}")
-        
+
         print("\n## Video B")
         print(f"- Frames: {report_b.frame_count}")
         print(f"- Artifact Score: {report_b.artifact_score:.3f}")
         print(f"- Flicker Events: {len(report_b.flicker_events)}")
         print(f"- Texture Issues: {len(report_b.texture_issues)}")
-        
+
         print("\n## Comparison")
         if report_a.artifact_score < report_b.artifact_score:
             print("Video A has fewer temporal artifacts.")
@@ -52,7 +51,7 @@ def cmd_compare(args):
             print("Video B has fewer temporal artifacts.")
         else:
             print("Both videos have similar artifact levels.")
-    
+
     except Exception as e:
         print(f"Error: {e}", file=sys.stderr)
         sys.exit(1)
@@ -64,9 +63,9 @@ def main():
         prog="tad",
         description="Temporal Artifact Detector - Detect flickering and artifacts in AI-generated videos",
     )
-    
+
     subparsers = parser.add_subparsers(dest="command", help="Available commands")
-    
+
     # Analyze command
     analyze_parser = subparsers.add_parser("analyze", help="Analyze a video for temporal artifacts")
     analyze_parser.add_argument("video", help="Path to video file")
@@ -89,19 +88,19 @@ def main():
         help="Analyze every Nth frame (default: 1)",
     )
     analyze_parser.set_defaults(func=cmd_analyze)
-    
+
     # Compare command
     compare_parser = subparsers.add_parser("compare", help="Compare two videos")
     compare_parser.add_argument("video_a", help="Path to first video file")
     compare_parser.add_argument("video_b", help="Path to second video file")
     compare_parser.set_defaults(func=cmd_compare)
-    
+
     args = parser.parse_args()
-    
+
     if not args.command:
         parser.print_help()
         sys.exit(1)
-    
+
     args.func(args)
 
 

@@ -3,32 +3,28 @@
 from __future__ import annotations
 
 import sys
-from pathlib import Path
 
 import click
 
 from validator import (
-    load_texture,
-    load_pbr_set,
+    check_albedo_not_overexposed,
+    check_ao_range,
+    check_metallic_range,
     check_normal_map_format,
     check_roughness_range,
-    check_metallic_range,
-    check_ao_range,
-    check_albedo_not_overexposed,
-    validate_unreal,
-    validate_unity,
+    load_pbr_set,
+    load_texture,
     validate_godot,
-    get_recommended_settings,
+    validate_unity,
+    validate_unreal,
 )
-from validator.checks import check_resolution, check_color_space
-from validator.report import generate_report, ValidationReport
+from validator.report import generate_report
 
 
 @click.group()
 @click.version_option(package_name="pbr-validator")
 def cli():
     """PBR texture validator for game engines."""
-    pass
 
 
 @cli.command()

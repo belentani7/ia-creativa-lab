@@ -3,8 +3,6 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import Any
-
 
 STANDARD_SUBJECTS: list[str] = [
     "portrait of a young woman",

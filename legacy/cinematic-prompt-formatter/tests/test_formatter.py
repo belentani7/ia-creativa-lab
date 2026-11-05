@@ -2,18 +2,17 @@
 Tests for the formatter module.
 """
 
-import pytest
 from formatter.formatter import (
-    format_prompt,
-    format_batch,
-    optimize_for_model,
-    optimize_sdxl,
-    optimize_flux,
-    optimize_sd15,
     apply_preset,
+    format_batch,
+    format_prompt,
+    optimize_flux,
+    optimize_for_model,
+    optimize_sd15,
+    optimize_sdxl,
     parse_description,
 )
-from formatter.presets import PRESETS, get_preset
+from formatter.presets import get_preset
 
 
 class TestFormatPrompt:

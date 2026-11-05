@@ -2,10 +2,6 @@
 
 from __future__ import annotations
 
-from typing import Any
-
-import pytest
-
 from compiler.validator import (
     KNOWN_NODE_TYPES,
     validate_all,

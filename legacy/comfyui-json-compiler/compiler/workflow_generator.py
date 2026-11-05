@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import random
 from typing import Any
 
 from compiler.node_mapper import NodeGraph, NodeSpec
