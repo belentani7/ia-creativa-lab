@@ -78,3 +78,7 @@ La tabla original anterior registra tamaños y visibilidad del inventario histó
 | Demo desplegada | https://belentani7.github.io/ia-creativa-lab/ |
 
 Quality baseline: CI + Dependabot + CodeQL + reglas de agentes por [premium-factory](https://github.com/belentani7/premium-factory-api).
+
+
+## Producto
+Véase `plataforma/OFERTA.md`, `plataforma/precios.json`, `plataforma/ONEPAGER.md`.
