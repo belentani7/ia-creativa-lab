@@ -2,19 +2,23 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync, existsSync, readdirSync, statSync } from "node:fs";
 import { resolve } from "node:path";
+
 const root = resolve(".");
 const catalog = JSON.parse(readFileSync(resolve(root, "catalog.json"), "utf8"));
 const html = readFileSync(resolve(root, "index.html"), "utf8");
+const siteHtml = readFileSync(resolve(root, "site/index.html"), "utf8");
 const js = readFileSync(resolve(root, "workbench/studio.js"), "utf8");
 
 test("keep exactly 24 independent original snapshots, with no additions by conversation", () => {
   assert.equal(catalog.schema_version, 1);
   assert.equal(catalog.distributable, false);
   assert.equal(catalog.snapshots.length, 24);
-  assert.equal(new Set(catalog.snapshots.map(x => x.id)).size, 24);
-  const actual = readdirSync(resolve(root,"legacy"), { withFileTypes: true })
-    .filter(entry => entry.isDirectory()).map(x => x.name).sort();
-  assert.deepEqual(actual, catalog.snapshots.map(x => x.id).sort());
+  assert.equal(new Set(catalog.snapshots.map((x) => x.id)).size, 24);
+  const actual = readdirSync(resolve(root, "legacy"), { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => entry.name)
+    .sort();
+  assert.deepEqual(actual, catalog.snapshots.map((x) => x.id).sort());
 });
 
 test("every archive card resolves to an existing local file within its original project", () => {
@@ -31,31 +35,23 @@ test("every archive card resolves to an existing local file within its original 
   }
 });
 
-test("visibility numbers remain historical, not current claims", () => {
-  assert.equal(catalog.snapshots.filter(x => x.historical_visibility === "private").length, 11);
-  assert.equal(catalog.snapshots.filter(x => x.historical_visibility === "public").length, 13);
-  assert.match(catalog.visibility_warning, /not current permissions/);
-  assert.match(html, /noindex,nofollow,noarchive/);
-  assert.match(html, /NO PUBLICACIÓN/);
-  assert.doesNotMatch(html, /googleapis|cdn\.jsdelivr|<iframe/);
+test("public entrypoints only hand off to the central platform", () => {
+  for (const entry of [html, siteHtml]) {
+    assert.match(entry, /noindex,nofollow,noarchive/);
+    assert.match(entry, /NO PUBLICACIÓN/);
+    assert.match(entry, /https:\/\/www\.belentani\.es\/ai-lab/);
+    assert.doesNotMatch(entry, /catalog\.json|legacy\//);
+    assert.doesNotMatch(entry, /googleapis|cdn\.jsdelivr|<iframe/);
+  }
 });
 
-test("real search and filtering preserve identity and never inject HTML", () => {
-  assert.match(html, /id="cards"/);
-  assert.match(html, /id="query"/);
-  assert.match(html, /data-filter="private"/);
-  assert.match(html, /data-filter="public"/);
+test("the internal workbench keeps safe local rendering rules", () => {
   assert.match(js, /state\.items\.filter/);
   assert.match(js, /entrypoint_path/);
   assert.match(js, /createElement/);
   assert.match(js, /replaceChildren/);
   assert.doesNotMatch(js, /\.innerHTML\s*=/);
   assert.doesNotMatch(js, /\.eval\(|new Function\(/);
-  assert.match(html, /href="#catalog"/);
-});
-
-test("local manifest import and source downloads work without serving legacy HTML", () => {
-  assert.match(html, /id="catalogFile" type="file"/);
   assert.match(js, /file\.size > 256_000/);
   assert.match(js, /await file\.text\(\)/);
   assert.match(js, /applyManifest\(parsed\)/);
