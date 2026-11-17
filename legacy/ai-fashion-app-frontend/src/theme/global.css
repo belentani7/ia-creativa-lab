@@ -58,3 +58,19 @@
 .text-cian { color: var(--cian); text-shadow: 0 0 18px rgba(51, 214, 255, 0.45); }
 .text-oro { color: var(--oro); text-shadow: 0 0 18px rgba(232, 182, 76, 0.45); }
 .glow-oro { box-shadow: 0 0 28px rgba(232, 182, 76, 0.35); }
+
+/* --- mejora universal: movimiento reducido --- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --- mejora universal: foco visible --- */
+:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}

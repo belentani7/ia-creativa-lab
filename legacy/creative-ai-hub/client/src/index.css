@@ -129,3 +129,19 @@ h1 em, h2 em { font-family: 'Playfair Display', serif; font-weight: 600; color: 
 @media (max-width: 1080px) { .page-wrap { padding-left: 30px; padding-right: 30px; }.topbar { padding: 0 30px; }.hero-orbit { margin-right: 10px; }.tool-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 800px) { .sidebar { width: 64px; padding: 18px 9px; }.brand-lockup { padding: 0 8px 35px; }.brand-lockup > div:last-child, .side-label, .nav-item span, .privacy-card, .side-footer { display: none; }.brand-mark { width: 35px; height: 35px; }.nav-item { justify-content: center; padding: 12px 0; }.nav-count { display: none; }.main-area { margin-left: 64px; }.topbar { padding: 0 20px; }.mobile-brand { display: flex; align-items: center; gap: 7px; color: #756d67; font-size: 11px; }.breadcrumb { display: none; }.page-wrap { padding: 40px 20px 55px; }.hero-row { min-height: 0; margin-bottom: 32px; }.hero-orbit { display: none; }.studio-grid { grid-template-columns: 1fr; }.bottom-row { grid-template-columns: 1fr; }.page-heading-row { align-items: flex-start; gap: 20px; flex-direction: column; }.search-box { width: 100%; }.library-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 520px) { h1 { font-size: 44px; }.lead { font-size: 13px; }.media-tabs { grid-template-columns: repeat(2, 1fr); }.field-row { grid-template-columns: 1fr; gap: 0; }.composer-card { padding: 18px 16px; }.composer-actions { flex-wrap: wrap; }.button { flex: 1; }.tool-grid, .library-grid, .guide-grid { grid-template-columns: 1fr; }.section-heading { align-items: flex-start; gap: 16px; flex-direction: column; }.tools-section { margin-top: 47px; }.top-actions .online { display: none; }.page-heading-row h1 { font-size: 43px; } }
+
+/* --- mejora universal: movimiento reducido --- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --- mejora universal: foco visible --- */
+:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
